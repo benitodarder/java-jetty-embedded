@@ -1,0 +1,7 @@
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/impl/ComponentDAO.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/interfaces/IAbstractDAO.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/impl/ProductDAO.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/ProductDAOConfiguration.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/impl/ProductDAOFactory.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/impl/UnitDAO.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-dao/src/main/java/local/tin/tests/dao/impl/AssemblyDAO.java

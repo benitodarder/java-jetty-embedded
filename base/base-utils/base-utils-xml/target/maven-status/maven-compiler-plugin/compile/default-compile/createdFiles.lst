@@ -1,0 +1,7 @@
+local/tin/tests/utils/jaxb/JAXBMarshaller$1.class
+local/tin/tests/utils/jaxb/JAXBMarshaller$JAXBMarshallerHolder.class
+local/tin/tests/utils/xml/XMLUtil.class
+local/tin/tests/utils/xml/XMLUtil$XMLUtilHolder.class
+local/tin/tests/utils/xml/common/SimpleErrorHandler.class
+local/tin/tests/utils/jaxb/JAXBMarshaller.class
+local/tin/tests/utils/xml/XMLUtil$1.class

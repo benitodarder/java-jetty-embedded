@@ -1,0 +1,8 @@
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/interfaces/INamed.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/interfaces/IEnableable.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/abstracts/AbstractIdentifiable.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/interfaces/IEmbeddable.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/abstracts/AbstractNamed.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/interfaces/IIdentifiable.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/interfaces/IDataObject.java
+/home/benitodarder/Development/java/maven/jetty-embedded/base/base-model-data/src/main/java/local/tin/tests/model/data/abstracts/AbstractEnableable.java

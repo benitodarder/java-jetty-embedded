@@ -1,0 +1,5 @@
+local/tin/tests/model/data/product/Unit.class
+local/tin/tests/model/data/product/Product.class
+local/tin/tests/model/data/product/Assembly.class
+local/tin/tests/model/data/product/Component.class
+local/tin/tests/model/data/embeddables/AssemblyId.class

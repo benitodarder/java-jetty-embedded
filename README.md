@@ -1,2 +1,2 @@
-# jetty-embedded
-Standalone Jetty embedded services receipts
+# jett-embedded
+Jetty embedded workshop

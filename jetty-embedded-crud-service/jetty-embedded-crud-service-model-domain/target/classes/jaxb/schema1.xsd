@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+
+  <xs:element name="abstractConfiguration" type="abstractConfiguration"/>
+
+  <xs:element name="abstractDomainObject" type="abstractDomainObject"/>
+
+  <xs:element name="abstractIdentifiableObject" type="abstractIdentifiableObject"/>
+
+  <xs:element name="abstractProduct" type="abstractProduct"/>
+
+  <xs:element name="assembly" type="assembly"/>
+
+  <xs:element name="barn" type="barn"/>
+
+  <xs:element name="commonError" type="commonError"/>
+
+  <xs:element name="component" type="component"/>
+
+  <xs:element name="configuration" type="configuration"/>
+
+  <xs:element name="configurationId" type="configurationId"/>
+
+  <xs:element name="farm" type="farm"/>
+
+  <xs:element name="product" type="product"/>
+
+  <xs:element name="request" type="request"/>
+
+  <xs:element name="response" type="response"/>
+
+  <xs:element name="serviceType" type="serviceType"/>
+
+  <xs:element name="unit" type="unit"/>
+
+  <xs:complexType abstract="true" name="abstractDomainObject">
+    <xs:annotation>
+      <xs:documentation><![CDATA[(author): benito.darder]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractIdentifiableObject">
+    <xs:annotation>
+      <xs:documentation><![CDATA[(author): benito.darder]]></xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="abstractDomainObject">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="commonError">
+    <xs:annotation>
+      <xs:documentation><![CDATA[(author): benito.darder]]></xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="abstractDomainObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="errorCode">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="stackTrace" type="xs:string">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="request">
+    <xs:annotation>
+      <xs:documentation><![CDATA[(author): benito.darder]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelClass" type="xs:string">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice>
+        <xs:element ref="abstractIdentifiableObject"/>
+        <xs:element ref="abstractConfiguration"/>
+        <xs:element ref="barn"/>
+        <xs:element ref="configuration"/>
+        <xs:element ref="farm"/>
+        <xs:element ref="serviceType"/>
+        <xs:element ref="abstractProduct"/>
+        <xs:element ref="assembly"/>
+        <xs:element ref="component"/>
+        <xs:element ref="unit"/>
+        <xs:element ref="product"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractConfiguration">
+    <xs:complexContent>
+      <xs:extension base="abstractIdentifiableObject">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="barn">
+    <xs:complexContent>
+      <xs:extension base="abstractConfiguration">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="configurations" nillable="true" type="configuration"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="configuration">
+    <xs:complexContent>
+      <xs:extension base="abstractConfiguration">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="configurationId"/>
+          <xs:element minOccurs="0" name="parameter" type="xs:string"/>
+          <xs:element minOccurs="0" name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="configurationId">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="farm"/>
+      <xs:element minOccurs="0" ref="barn"/>
+      <xs:element minOccurs="0" name="type" type="serviceType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="farm">
+    <xs:complexContent>
+      <xs:extension base="abstractConfiguration">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="configurations" nillable="true" type="configuration"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="serviceType">
+    <xs:complexContent>
+      <xs:extension base="abstractConfiguration">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="configurations" nillable="true" type="configuration"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractProduct">
+    <xs:complexContent>
+      <xs:extension base="abstractIdentifiableObject">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="assembly">
+    <xs:complexContent>
+      <xs:extension base="abstractProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="assemblyId"/>
+          <xs:element minOccurs="0" name="quantity" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="assemblyId">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="component"/>
+      <xs:element minOccurs="0" ref="product"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="component">
+    <xs:complexContent>
+      <xs:extension base="abstractProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" ref="unit"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblies" nillable="true" type="assembly"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="unit">
+    <xs:complexContent>
+      <xs:extension base="abstractProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="product">
+    <xs:complexContent>
+      <xs:extension base="abstractProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblies" nillable="true" type="assembly"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="response">
+    <xs:annotation>
+      <xs:documentation><![CDATA[(author): benito.darder]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="success" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="data">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+              <xs:element ref="abstractIdentifiableObject"/>
+              <xs:element ref="abstractConfiguration"/>
+              <xs:element ref="barn"/>
+              <xs:element ref="configuration"/>
+              <xs:element ref="farm"/>
+              <xs:element ref="serviceType"/>
+              <xs:element ref="abstractProduct"/>
+              <xs:element ref="assembly"/>
+              <xs:element ref="component"/>
+              <xs:element ref="unit"/>
+              <xs:element ref="product"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element ref="commonError"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="errorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

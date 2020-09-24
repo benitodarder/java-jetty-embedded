@@ -1,0 +1,12 @@
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/product/Component.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/product/Assembly.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/messaging/Request.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/messaging/Response.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/compositeIds/AssemblyId.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/deserializers/AssemblyIdDeserializer.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/product/Unit.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/abstracts/AbstractProduct.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/deserializers/RequestDeserializer.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/abstracts/AbstractNamedProduct.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/product/Product.java
+/home/benitodarder/Development/java/maven/jetty-embedded/jetty-embedded-crud-service/jetty-embedded-crud-service-model-domain/src/main/java/local/tin/tests/model/domain/deserializers/AssemblyDeserializer.java
