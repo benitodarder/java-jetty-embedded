@@ -36,7 +36,7 @@ public class MultipartUtilsTest {
 
         String result = MultipartUtils.getInstance().getContentType(CONTENT_TYPE);
 
-        assertThat(result, equalTo(MultipartUtils.CONTENT_TYPE + CONTENT_TYPE + MultipartUtils.QUOTED_QUOTES));
+        assertThat(result, equalTo(MultipartUtils.CONTENT_TYPE + CONTENT_TYPE));
     }    
 
     @Test
@@ -44,7 +44,7 @@ public class MultipartUtilsTest {
 
         String result = MultipartUtils.getInstance().getContentTransferEncoding(TRANSFER_ENCODING);
 
-        assertThat(result, equalTo(MultipartUtils.CONTENT_TRANSFER_ENCODING + TRANSFER_ENCODING + MultipartUtils.QUOTED_QUOTES));
+        assertThat(result, equalTo(MultipartUtils.CONTENT_TRANSFER_ENCODING + TRANSFER_ENCODING));
     }      
 
 }

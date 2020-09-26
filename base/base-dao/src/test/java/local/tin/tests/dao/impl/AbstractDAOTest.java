@@ -423,11 +423,12 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.updateDomainObjectId(mockedAbstractDataObject, mockedAbstractDomainObject);
 
-        verify(mockedAbstractDataObject).setId(ID);
+        verify(mockedAbstractDomainObject).setId(ID);
     }
 
     @Test
     public void updateDomainObjectId_assings_embedded_id() throws DAOException {
+        reset(mockedAbstractDomainObject);
         when(mockedAbstractDataObject.getId()).thenReturn(mockedEmbeddable);
 
         dao.updateDomainObjectId(mockedAbstractDataObject, mockedAbstractDomainObject);

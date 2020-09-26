@@ -417,15 +417,17 @@ public class AbstractDAOTest extends BaseDAOTest {
 
     @Test
     public void updateDomainObjectId_assings_atomic_id() throws DAOException {
+        reset(mockedAbstractDomainObject);
         when(mockedAbstractDataObject.getId()).thenReturn(ID);
 
         dao.updateDomainObjectId(mockedAbstractDataObject, mockedAbstractDomainObject);
 
-        verify(mockedAbstractDataObject).setId(ID);
+        verify(mockedAbstractDomainObject).setId(ID);
     }
 
     @Test
     public void updateDomainObjectId_assings_embedded_id() throws DAOException {
+        reset(mockedAbstractDomainObject);
         when(mockedAbstractDataObject.getId()).thenReturn(mockedEmbeddable);
 
         dao.updateDomainObjectId(mockedAbstractDataObject, mockedAbstractDomainObject);
@@ -501,7 +503,7 @@ public class AbstractDAOTest extends BaseDAOTest {
     public void create_assigns_id() throws DAOException {
         reset(mockedAbstractDomainObject);
         when(mockedAbstractDataObject.getId()).thenReturn(mockedEmbeddable);
-        
+
         local.tin.tests.model.domain.interfaces.IIdentifiable result = dao.create(mockedAbstractDomainObject);
 
         verify(mockedAbstractDomainObject).setId(mockedICompositeId);
@@ -517,18 +519,17 @@ public class AbstractDAOTest extends BaseDAOTest {
     }
 
 //A 
-
     @Test
     public void delete_removes_object() throws DAOException {
         when(mockedAbstractDomainObject.getId()).thenReturn(mockedICompositeId);
         when(mockedEntityManager.find(IIdentifiable.class, mockedEmbeddable)).thenReturn(mockedAbstractDataObject);
         when(mockedEntityManager.merge(mockedAbstractDataObject)).thenReturn(mockedAbstractDataObject);
-        
+
         dao.delete(mockedAbstractDomainObject);
 
         verify(mockedEntityManager).remove(mockedAbstractDataObject);
     }
-    
+
     @Test
     public void retrieveAll_returns_expected_query() throws DAOException {
         Query mockedTypedQuery = mock(Query.class);
@@ -536,23 +537,23 @@ public class AbstractDAOTest extends BaseDAOTest {
         List<local.tin.tests.model.data.interfaces.IIdentifiable> dataResults = new ArrayList<>();
         dataResults.add(mockedAbstractDataObject);
         when(mockedTypedQuery.getResultList()).thenReturn(dataResults);
-        
+
         List<local.tin.tests.model.domain.interfaces.IIdentifiable> results = dao.retrieveAll();
 
         assertThat(results.size(), equalTo(1));
         assertThat(results.get(0), equalTo(mockedAbstractDomainObject));
-    }    
-    
+    }
+
     @Test
     public void update_merges_object() throws DAOException {
         reset(mockedEntityManager);
         when(mockedEntityManager.getTransaction()).thenReturn(mockedEntityTransaction);
         when(mockedEntityManager.merge(mockedAbstractDataObject)).thenReturn(mockedAbstractDataObject);
-        
+
         local.tin.tests.model.domain.interfaces.IIdentifiable result = dao.update(mockedAbstractDomainObject);
 
         verify(mockedEntityManager).merge(mockedAbstractDataObject);
-    }    
+    }
 }
 
 class AbstractDAOWrapperWithEmbeddedId extends AbstractDAO<local.tin.tests.model.domain.interfaces.IIdentifiable, local.tin.tests.model.data.interfaces.IIdentifiable> {
