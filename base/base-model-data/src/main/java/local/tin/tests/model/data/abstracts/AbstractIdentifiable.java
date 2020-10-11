@@ -9,7 +9,7 @@ import local.tin.tests.model.data.interfaces.IIdentifiable;
  * @author benitodarder
  */
 @MappedSuperclass
-public abstract class AbstractIdentifiable extends AbstractEnableable implements IIdentifiable {
+public abstract class AbstractIdentifiable implements IIdentifiable {
 
     @Override
     public int hashCode() {

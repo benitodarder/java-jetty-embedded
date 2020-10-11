@@ -4,7 +4,7 @@ package local.tin.tests.model.data.interfaces;
  *
  * @author benito.darder
  */
-public interface IIdentifiable extends IEnableable {
+public interface IIdentifiable extends IDataObject {
     
     /**
      * Returns the element identifier, being atomic or composite

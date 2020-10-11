@@ -15,19 +15,14 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <scope>provided</scope>
         </dependency> 
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>base-model-data</artifactId>
             <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>javax.persistence</groupId>
-                    <artifactId>persistence-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>       
     </dependencies>
     <name>jetty-embedded-crud-service-model-data</name>

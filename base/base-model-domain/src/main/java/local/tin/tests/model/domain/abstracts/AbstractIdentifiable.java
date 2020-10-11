@@ -7,7 +7,7 @@ import local.tin.tests.model.domain.interfaces.IIdentifiable;
  *
  * @author benitodarder
  */
-public abstract class AbstractIdentifiable extends AbstractEnableable implements IIdentifiable {
+public abstract class AbstractIdentifiable implements IIdentifiable {
 
     @Override
     public int hashCode() {

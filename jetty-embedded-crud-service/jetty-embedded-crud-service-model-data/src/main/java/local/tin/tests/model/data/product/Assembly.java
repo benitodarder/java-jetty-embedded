@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
-import local.tin.tests.model.data.abstracts.AbstractIdentifiable;
+import local.tin.tests.model.data.abstracts.AbstractEnableable;
 import local.tin.tests.model.data.embeddables.AssemblyId;
 
 /**
@@ -18,7 +18,7 @@ import local.tin.tests.model.data.embeddables.AssemblyId;
  */
 @Entity
 @Table(name = "ASSEMBLY")
-public class Assembly extends AbstractIdentifiable {
+public class Assembly extends AbstractEnableable {
 
     @EmbeddedId
     private AssemblyId id;

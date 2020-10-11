@@ -8,7 +8,7 @@ import local.tin.tests.model.domain.interfaces.INamed;
  *
  * @author benitodarder
  */
-public abstract class AbstractNamed extends AbstractIdentifiable implements INamed {
+public abstract class AbstractNamed extends AbstractEnableable implements INamed {
 
     private String name;
 

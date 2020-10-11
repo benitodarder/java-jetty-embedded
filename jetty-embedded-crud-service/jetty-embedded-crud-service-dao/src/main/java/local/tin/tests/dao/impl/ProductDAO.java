@@ -9,7 +9,7 @@ import local.tin.tests.model.domain.exceptions.DAOException;
  *
  * @author benito.darder
  */
-public class ProductDAO extends AbstractDAO<local.tin.tests.model.domain.product.Product, Product> {
+public class ProductDAO extends AbstractEnableableDAO<local.tin.tests.model.domain.product.Product, Product> {
 
     public ProductDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

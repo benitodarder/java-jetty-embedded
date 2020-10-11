@@ -4,7 +4,7 @@ package local.tin.tests.model.data.interfaces;
  *
  * @author benitodarder
  */
-public interface IEnableable extends IDataObject {
+public interface IEnableable extends IIdentifiable {
     
     /**
      * Returns enabled/disabled status

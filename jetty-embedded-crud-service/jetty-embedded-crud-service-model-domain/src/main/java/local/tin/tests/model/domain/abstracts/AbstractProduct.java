@@ -13,7 +13,7 @@ import local.tin.tests.model.domain.product.Assembly;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Assembly.class})
-public abstract class AbstractProduct extends AbstractIdentifiable {
+public abstract class AbstractProduct extends AbstractEnableable {
     
    
     

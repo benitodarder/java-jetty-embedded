@@ -4,7 +4,7 @@ package local.tin.tests.model.domain.interfaces;
  *
  * @author benitodarder
  */
-public interface IEnableable extends IDomain {
+public interface IEnableable extends IIdentifiable {
     
     /**
      * Returns enabled/disabled status

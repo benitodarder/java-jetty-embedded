@@ -13,7 +13,7 @@ import local.tin.tests.model.domain.interfaces.ICompositeId;
  *
  * @author benito.darder
  */
-public class AssemblyDAO extends AbstractDAO<local.tin.tests.model.domain.product.Assembly, Assembly> {
+public class AssemblyDAO extends AbstractEnableableDAO<local.tin.tests.model.domain.product.Assembly, Assembly> {
 
     public AssemblyDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

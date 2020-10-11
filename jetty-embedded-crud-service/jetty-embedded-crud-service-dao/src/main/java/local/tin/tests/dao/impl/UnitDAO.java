@@ -4,12 +4,11 @@ import javax.persistence.EntityManagerFactory;
 import local.tin.tests.model.data.product.Unit;
 import local.tin.tests.model.domain.exceptions.DAOException;
 
-
 /**
  *
  * @author benito.darder
  */
-public class UnitDAO extends AbstractDAO<local.tin.tests.model.domain.product.Unit, Unit>{
+public class UnitDAO extends AbstractEnableableDAO<local.tin.tests.model.domain.product.Unit, Unit> {
 
     public UnitDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
@@ -32,9 +31,9 @@ public class UnitDAO extends AbstractDAO<local.tin.tests.model.domain.product.Un
 
     @Override
     protected local.tin.tests.model.domain.product.Unit updateDomainObjectDepth0Fields(local.tin.tests.model.domain.product.Unit domainObject, Unit dataObject) throws DAOException {
-                domainObject.setName(dataObject.getName());
-                domainObject.setAbbreviation(dataObject.getAbbreviation());
-                return domainObject;
+        domainObject.setName(dataObject.getName());
+        domainObject.setAbbreviation(dataObject.getAbbreviation());
+        return domainObject;
     }
 
     @Override
@@ -58,10 +57,10 @@ public class UnitDAO extends AbstractDAO<local.tin.tests.model.domain.product.Un
         ComponentDAO componentDAO = getComponentDAO();
         for (local.tin.tests.model.domain.product.Component current : domainObject.getComponents()) {
             dataObject.getComponents().add(componentDAO.getDataObject(current, depth));
-        }        
+        }
         return dataObject;
     }
-    
+
     private ComponentDAO getComponentDAO() throws DAOException {
         return (ComponentDAO) ProductDAOFactory.getInstance().getDAO(local.tin.tests.model.data.product.Component.class);
     }

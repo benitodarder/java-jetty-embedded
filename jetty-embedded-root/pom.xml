@@ -29,15 +29,16 @@
         <!-- Common -->
         <commons.codec.version>1.2</commons.codec.version>
         <commons.logging.version>1.0.4</commons.logging.version>
-        <commons.net.version>3.6</commons.net.version>        
+        <commons.net.version>3.6</commons.net.version>      
+        <eclipselink.version>2.7.7</eclipselink.version>  
         <fasterxml.jackson.version>2.10.1</fasterxml.jackson.version>
         <fasterxml.jackson.mapper.version>2.9.8</fasterxml.jackson.mapper.version>
         <jackson.version>1.6.3</jackson.version>
         <glassfish.web.version>2.2</glassfish.web.version>
-        <hibernate.version>3.5.0-Final</hibernate.version>
+        <hibernate.version>5.4.22.Final</hibernate.version>
         <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
         <hibernate.vallidator.version>5.4.3.Final</hibernate.vallidator.version>
-        <hsqldb.version>1.8.0.10</hsqldb.version>
+        <hsqldb.version>2.4.0</hsqldb.version>
         <hierynomus.sshj.version>0.27.0</hierynomus.sshj.version>
         <infinispan.version>4.2.0.FINAL</infinispan.version>
         <javaassist.version>3.12.1.GA</javaassist.version>
@@ -334,7 +335,12 @@
                 <groupId>com.hierynomus</groupId>
                 <artifactId>sshj</artifactId>
                 <version>${hierynomus.sshj.version}</version>
-            </dependency>            
+            </dependency>      
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>                      
         </dependencies>
     </dependencyManagement>
     <build>

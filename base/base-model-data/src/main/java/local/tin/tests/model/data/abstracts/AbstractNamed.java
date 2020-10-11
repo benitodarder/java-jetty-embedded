@@ -10,7 +10,7 @@ import local.tin.tests.model.data.interfaces.INamed;
  * @author benitodarder
  */
 @MappedSuperclass
-public abstract class AbstractNamed extends AbstractIdentifiable implements INamed {
+public abstract class AbstractNamed extends AbstractEnableable implements INamed {
 
     @Column(name = "name")
     private String name;
