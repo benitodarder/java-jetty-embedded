@@ -444,24 +444,6 @@ public class AbstractDAOTest extends BaseDAOTest {
     }
 
     @Test
-    public void updateDomainCommonFields_assigns_fields() throws DAOException {
-        when(mockedAbstractDataObject.isEnabled()).thenReturn(true);
-
-        dao.updateDomainCommonFields(mockedAbstractDomainObject, mockedAbstractDataObject);
-
-        verify(mockedAbstractDomainObject).setEnabled(true);
-    }
-
-    @Test
-    public void updateDataCommonFields_assigns_fields() throws DAOException {
-        when(mockedAbstractDomainObject.isEnabled()).thenReturn(true);
-
-        dao.updateDataCommonFields(mockedAbstractDomainObject, mockedAbstractDataObject);
-
-        verify(mockedAbstractDataObject).setEnabled(true);
-    }
-
-    @Test
     public void getDomainObject_returns_expected_object() throws DAOException {
 
         local.tin.tests.model.domain.interfaces.IIdentifiable result = dao.getDomainObject(mockedAbstractDataObject, 0);
