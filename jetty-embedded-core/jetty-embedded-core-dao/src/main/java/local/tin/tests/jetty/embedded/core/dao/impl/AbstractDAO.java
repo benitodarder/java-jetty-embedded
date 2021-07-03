@@ -171,7 +171,7 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core
      * @return Domain class object
      * @throws local.tin.tests.model.domain.exceptions.DAOException
      */
-    protected C0 getDomainObject(C1 dataObject, int depth) throws DAOException {
+    public C0 getDomainObject(C1 dataObject, int depth) throws DAOException {
         C0 domainObject = getDomainObjectNewInstance();
         updateDomainObjectDepth0Fields(domainObject, dataObject);
         if (depth > 0) {
@@ -198,7 +198,7 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core
      * @return Domain class object
      * @throws local.tin.tests.model.domain.exceptions.DAOException
      */
-    protected C1 getDataObject(C0 domainObject, int depth) throws DAOException {
+    public C1 getDataObject(C0 domainObject, int depth) throws DAOException {
         C1 dataObject = getDataObjectNewInstance();
         updateDataObjectDepth0Fields(domainObject, dataObject);
         if (depth > 0) {

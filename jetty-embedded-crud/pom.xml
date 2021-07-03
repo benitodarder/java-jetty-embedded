@@ -6,12 +6,11 @@
         <artifactId>jetty-embedded-root</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>jetty-embedded-core</artifactId>
+    <artifactId>jetty-embedded-crud</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>jetty-embedded-core-models</module>
-        <module>jetty-embedded-core-base</module>
-        <module>jetty-embedded-core-dao</module>
-        <module>jetty-embedded-core-utils</module>
+        <module>jetty-embedded-crud-models</module>
+        <module>jetty-embedded-crud-dao</module>
+        <module>jetty-embedded-crud-service</module>
     </modules>
 </project>

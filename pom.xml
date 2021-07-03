@@ -410,5 +410,6 @@
     <modules>
         <module>jetty-embedded-core</module>
         <module>jetty-embedded-hello-world</module>
+        <module>jetty-embedded-crud</module>
     </modules>
 </project>
