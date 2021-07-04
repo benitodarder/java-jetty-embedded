@@ -35,7 +35,7 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core
     private final EntityManagerFactory entityManagerFactory;
     
 
-    public AbstractDAO(EntityManagerFactory entityManagerFactory) {
+    protected AbstractDAO(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
     }
 
@@ -286,8 +286,8 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core
             queryString = getQueryStringWithParameters(parameters);
             Query typedQuery = entityManager.createQuery(queryString);
             if (parameters != null && !parameters.isEmpty()) {
-                for (Map.Entry current : parameters.entrySet()) {
-                    typedQuery.setParameter((String) current.getKey(), current.getValue());
+                for (Map.Entry<String, Object> current : parameters.entrySet()) {
+                    typedQuery.setParameter(current.getKey(), current.getValue());
                 }
             }
             resultList = typedQuery.getResultList();

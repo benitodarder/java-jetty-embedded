@@ -9,7 +9,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException
  */
 public abstract class AbstractEnableableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IEnableable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.IEnableable> extends AbstractDAO<C0, C1>{
      
-    public AbstractEnableableDAO(EntityManagerFactory entityManagerFactory) {
+    protected AbstractEnableableDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
     }
 

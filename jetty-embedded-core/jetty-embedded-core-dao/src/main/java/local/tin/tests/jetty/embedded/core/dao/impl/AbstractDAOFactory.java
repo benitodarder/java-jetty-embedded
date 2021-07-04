@@ -23,7 +23,7 @@ public abstract class AbstractDAOFactory {
         getEntityManagerFactory().close();
     }
     
-    public AbstractDAO getDAO(Class klass) throws DAOException   {
+    public AbstractDAO getDAO(Class<?> klass) throws DAOException   {
         try {
             String daoName = getDAOFullName(klass);
             Class<?> daoClass = Class.forName(daoName);
@@ -35,7 +35,7 @@ public abstract class AbstractDAOFactory {
         }  
     }  
     
-    private String getDAOFullName(Class klass) throws DAOException {
+    private String getDAOFullName(Class<?> klass) throws DAOException {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getDAOBasePackage()).append(".").append(klass.getSimpleName()).append("DAO");
         return stringBuilder.toString();

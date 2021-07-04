@@ -19,7 +19,7 @@ public abstract class AbstractConfiguration {
     }
 
     public void loadProperties(Properties properties) {
-        for (Map.Entry current : properties.entrySet()) {
+        for (Map.Entry<Object,Object> current : properties.entrySet()) {
             getConfigurationMap().put((String) current.getKey(), (String) current.getValue());
         }
     }
