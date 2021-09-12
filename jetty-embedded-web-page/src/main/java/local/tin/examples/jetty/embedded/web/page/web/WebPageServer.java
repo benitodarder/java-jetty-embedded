@@ -1,7 +1,7 @@
 package local.tin.examples.jetty.embedded.web.page.web;
 
-import java.io.File;
 import java.util.Map;
+import local.tin.examples.jetty.embedded.web.page.Configuration;
 import org.apache.log4j.Logger;
 import local.tin.tests.jetty.embedded.core.base.IConfiguration;
 import local.tin.tests.jetty.embedded.core.base.exceptions.JettyEmbeddedCommonException;
@@ -9,7 +9,6 @@ import local.tin.tests.jetty.embedded.core.base.web.interfaces.IAbstractJettySer
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
-import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -38,32 +37,16 @@ public class WebPageServer implements IAbstractJettyServer {
         jerseyServlet = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, parameters.getURLPattern());
         jerseyServlet.setInitOrder(INIT_ORDER);
         jerseyServlet.setInitParameter(SERVER_PROVIDER_CLASSES, parameters.getControllers());
-        //for static  content:
         ResourceHandler resH = new ResourceHandler();
         resH.setDirectoriesListed(true);
-        resH.setWelcomeFiles(new String[]{ "index.html" });
-        resH.setResourceBase(getResourceBase());
+        resH.setWelcomeFiles(new String[]{ Configuration.DOCUMENT_BASE });
+        resH.setResourceBase(Configuration.RESOURCE_BASE);
         ContextHandler resCtx = new ContextHandler();
         resCtx.setHandler(resH);
 
-        //Add both ContextHandlers to server:
         ContextHandlerCollection handlers = new ContextHandlerCollection(resCtx, context);
         jettyServer.setHandler(handlers);
         Runtime.getRuntime().addShutdownHook(parameters.getShutdownHook());
-    }
-
-    private static String getResourceBase() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(".")
-                .append(File.separator)
-                .append("src")
-                .append(File.separator)
-                .append("main")
-                .append(File.separator)
-                .append("resources")
-                .append(File.separator)
-                .append("public");
-        return stringBuilder.toString();
     }
 
     protected Logger getLogger() {

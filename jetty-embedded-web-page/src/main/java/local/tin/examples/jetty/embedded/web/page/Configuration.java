@@ -1,5 +1,6 @@
 package local.tin.examples.jetty.embedded.web.page;
 
+import java.io.File;
 import local.tin.examples.jetty.embedded.web.page.controllers.WebPageCtrl;
 import local.tin.examples.jetty.embedded.web.page.web.WebPageShutdownHook;
 import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
@@ -16,7 +17,9 @@ public class Configuration implements IConfiguration {
     public static final String PATH_SPEC = "/*";
     public static final String SERVER_APPLICATION_PATH = "/path";
     public static final int SERVER_HTTP_PORT = 8080;
-
+    public static final String RESOURCE_BASE = "." + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "public";
+    public static final String DOCUMENT_BASE= "index.html";
+    
     @Override
     public String getURLPattern() {
         return PATH_SPEC;
