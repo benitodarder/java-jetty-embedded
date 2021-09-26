@@ -7,3 +7,5 @@ Jetty embedded workshop
 - jetty-embedded-hello-world that's it...
 
 - jetty-embedded-web-page publishes some example REST services and a client web page
+
+- jetty-embedded-hello-world-https and now over Https!!
