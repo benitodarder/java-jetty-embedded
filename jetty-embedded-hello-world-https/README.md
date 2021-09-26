@@ -1,6 +1,6 @@
 # Jetty Embedded Hello World over HTTPS
 
-Sample self-certifacate creation:
+Sample self-certifacate creation, note as empty password is not allowed:
 
     $ <JDK bin folder path>keytool -keystore helloWorldSSL.jks -alias helloWorldSSL -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -genkey -validity 7
     Enter keystore password:
