@@ -412,5 +412,6 @@
         <module>jetty-embedded-hello-world</module>
         <module>jetty-embedded-crud</module>
         <module>jetty-embedded-web-page</module>
+        <module>jetty-embedded-hello-world-https</module>
     </modules>
 </project>
