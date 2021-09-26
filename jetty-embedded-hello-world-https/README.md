@@ -8,17 +8,17 @@ Sample self-certifacate creation:
     Enter keystore password:  password
     Re-enter new password: password
     What is your first and last name?
-      \[Unknown\]:
+      [Unknown]:
     What is the name of your organizational unit?
-      \[Unknown\]:
+      [Unknown]:
     What is the name of your organization?
-      \[Unknown\]:
+      [Unknown]:
     What is the name of your City or Locality?
-      \[Unknown\]:
+      [Unknown]:
     What is the name of your State or Province?
-      \[Unknown\]:
+      [Unknown]:
     What is the two-letter country code for this unit?
-      \[Unknown\]:
+      [Unknown]:
     Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
       [no]:  yes
 
