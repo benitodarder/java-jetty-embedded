@@ -413,5 +413,6 @@
         <module>jetty-embedded-crud</module>
         <module>jetty-embedded-web-page</module>
         <module>jetty-embedded-hello-world-https</module>
+        <module>jetty-embedded-logging</module>
     </modules>
 </project>
