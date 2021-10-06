@@ -5,6 +5,8 @@ package local.tin.examples.jetty.embedded.logging.web.filters;
  * @author benitodarder
  */
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.stream.Collectors;
 
 import javax.servlet.FilterChain;
@@ -36,7 +38,7 @@ public class LoggingFilter implements javax.servlet.Filter {
             LoggingHttpServletResponseWrapper responseWrapper = new LoggingHttpServletResponseWrapper(httpResponse);
             String requestBody = requestWrapper.getContent();
             long t0 = System.currentTimeMillis();
-            
+
             try {
 
                 filterChain.doFilter(requestWrapper, responseWrapper);
@@ -44,7 +46,10 @@ public class LoggingFilter implements javax.servlet.Filter {
                 LOGGER.info("{} {} - {}{} - {}ms\nRequest body:\n{}\nResponse body:\n{}\n==============================================", requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, responseWrapper.getContent());
 
             } catch (Exception e) {
-                LOGGER.error("{} {} - {}{} - {}ms\nRequest body:\n{}\nException message:\n{}\n==============================================", requestWrapper.getMethod(),  responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, e.getMessage());
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                LOGGER.error("{} {} - {}{} - {}ms\nRequest body:\n{}\nException message:\n{}\n==============================================", requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, sw.toString());
             }
             httpResponse.getOutputStream().write(responseWrapper.getContentAsBytes());
 

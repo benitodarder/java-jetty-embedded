@@ -25,3 +25,17 @@ hs_err_pid*
 **/target/**
 /**/nbactions.xml
 /**/nb-configuration.xml
+/jetty-embedded-core/jetty-embedded-core-models/jetty-embedded-core-models-data/target/
+/jetty-embedded-core/jetty-embedded-core-models/jetty-embedded-core-models-domain/target/
+/jetty-embedded-core/jetty-embedded-core-base/target/
+/jetty-embedded-core/jetty-embedded-core-utils/jetty-embedded-core-utils-json/target/
+/jetty-embedded-core/jetty-embedded-core-dao/target/
+/jetty-embedded-core/jetty-embedded-core-utils/jetty-embedded-core-utils-files/target/
+/jetty-embedded-logging/target/
+/jetty-embedded-hello-world/target/
+/jetty-embedded-crud/jetty-embedded-crud-models/jetty-embedded-crud-models-data/target/
+/jetty-embedded-crud/jetty-embedded-crud-models/jetty-embedded-crud-models-domain/target/
+/jetty-embedded-crud/jetty-embedded-crud-dao/target/
+/jetty-embedded-crud/jetty-embedded-crud-service/target/
+/jetty-embedded-web-page/target/
+/jetty-embedded-hello-world-https/target/

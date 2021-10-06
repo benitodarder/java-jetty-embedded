@@ -5,7 +5,14 @@
     <appender name="raw_console" class="org.apache.log4j.ConsoleAppender"> 
         <param name="Target" value="System.out"/> 
         <layout class="org.apache.log4j.PatternLayout"> 
-            
+            <param name="ConversionPattern" value="%m%n" />  
+        </layout> 
+    </appender> 
+
+    <appender name="timestamped_console" class="org.apache.log4j.ConsoleAppender"> 
+        <param name="Target" value="System.out"/> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} - [%-5p] - %m%n" />   
         </layout> 
     </appender> 
 
@@ -33,9 +40,9 @@
         <appender-ref ref="messageAppender" /> 
     </logger>
 
-    <logger name="local.tin.examples.jetty.embedded.logging.service.UpperCaser" additivity="false">
-        <priority level="info" /> 
-        <appender-ref ref="raw_console" /> 
+    <logger name="local.tin.examples.jetty.embedded.logging.service" additivity="false">
+        <priority value="debug" /> 
+        <appender-ref ref="timestamped_console" /> 
     </logger>
 
     <root> 
