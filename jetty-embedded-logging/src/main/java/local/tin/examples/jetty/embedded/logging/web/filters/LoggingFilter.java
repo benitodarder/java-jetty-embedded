@@ -41,10 +41,10 @@ public class LoggingFilter implements javax.servlet.Filter {
 
                 filterChain.doFilter(requestWrapper, responseWrapper);
 
-                LOGGER.info("{} - {}{} - {}ms\nRequest body:\n{}\nResponse body:\n{}", requestWrapper.getMethod(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, responseWrapper.getContent());
+                LOGGER.info("{} {} - {}{} - {}ms\nRequest body:\n{}\nResponse body:\n{}\n==============================================", requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, responseWrapper.getContent());
 
             } catch (Exception e) {
-                LOGGER.info("{} - {}{} - {}ms\nRequest body:\n{}\nException message:\n{}", requestWrapper.getMethod(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, e.getMessage());
+                LOGGER.error("{} {} - {}{} - {}ms\nRequest body:\n{}\nException message:\n{}\n==============================================", requestWrapper.getMethod(),  responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, e.getMessage());
             }
             httpResponse.getOutputStream().write(responseWrapper.getContentAsBytes());
 
