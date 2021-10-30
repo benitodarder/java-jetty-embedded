@@ -44,7 +44,7 @@ public class WebPageServer implements IAbstractJettyServer {
         Runtime.getRuntime().addShutdownHook(parameters.getShutdownHook());
     }
 
-    protected Logger getLogger() {
+    public Logger getLogger() {
         return LOGGER;
     }
 

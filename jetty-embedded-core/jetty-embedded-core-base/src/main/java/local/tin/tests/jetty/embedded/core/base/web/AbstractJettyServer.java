@@ -3,11 +3,8 @@ package local.tin.tests.jetty.embedded.core.base.web;
 import java.util.Map;
 import local.tin.tests.jetty.embedded.core.base.exceptions.JettyEmbeddedCommonException;
 import local.tin.tests.jetty.embedded.core.base.web.interfaces.IAbstractJettyServer;
-import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import local.tin.tests.jetty.embedded.core.base.IConfiguration;
 
 /**
  *
@@ -21,22 +18,9 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
     public static final String SERVER_PROVIDER_CLASSES = "jersey.config.server.provider.classnames";
     public static final String SERVER_PROVIDER_PACKAGES = "jersey.config.server.provider.packages";
     public static final String SERVER_SHUTOWN_HOOK = "server.shutdown.hook";
-    private final Server jettyServer;
-    private final ServletHolder jerseyServlet;
 
-    protected abstract Logger getLogger();
-
-    public AbstractJettyServer(IConfiguration configuration) {
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath(configuration.getApplicationPath());
-        jettyServer = new Server(configuration.getHttpPort());
-        jettyServer.setHandler(context);
-        jerseyServlet = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, configuration.getURLPattern());
-        jerseyServlet.setInitOrder(INIT_ORDER);
-        jerseyServlet.setInitParameter(SERVER_PROVIDER_CLASSES, configuration.getControllers());
-        Runtime.getRuntime().addShutdownHook(configuration.getShutdownHook());
-
-    }
+    protected abstract Server getServer();
+    protected abstract ServletHolder getServleHolder();
 
     @Override
     public void run() {
@@ -51,8 +35,8 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
     @Override
     public void startAndJoinServer() throws JettyEmbeddedCommonException {
         try {
-            jettyServer.start();
-            jettyServer.join();
+            getServer().start();
+            getServer().join();
         } catch (Exception ex) {
             throw new JettyEmbeddedCommonException(ex);
         }
@@ -61,7 +45,7 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
     @Override
     public void stopServer() throws JettyEmbeddedCommonException {
         try {
-            jettyServer.stop();
+            getServer().stop();
         } catch (Exception ex) {
             throw new JettyEmbeddedCommonException(ex);
         }
@@ -69,11 +53,11 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
 
     @Override
     public void destroyServer() throws JettyEmbeddedCommonException {
-        jettyServer.destroy();
+        getServer().destroy();
     }
 
     @Override
     public Map<String, String> getInitParameters() {
-        return jerseyServlet.getInitParameters();
-    }
+        return getServleHolder().getInitParameters();
+    }    
 }

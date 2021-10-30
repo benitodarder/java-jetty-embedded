@@ -52,7 +52,7 @@ public class JettyLoggingServer implements IAbstractJettyServer {
         jettyServer.setHandler(handlers);
     }
 
-    protected Logger getLogger() {
+    public Logger getLogger() {
         return LOGGER;
     }
 

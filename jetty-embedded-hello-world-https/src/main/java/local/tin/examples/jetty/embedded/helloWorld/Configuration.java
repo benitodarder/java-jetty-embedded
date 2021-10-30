@@ -5,13 +5,13 @@ import local.tin.examples.jetty.embedded.helloWorld.web.HelloWorldShutdownHook;
 import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
 import local.tin.tests.jetty.embedded.core.base.web.ShutdownHook;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
-import local.tin.tests.jetty.embedded.core.base.IConfiguration;
+import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
 
 /**
  *
  * @author benitodarder
  */
-public class Configuration implements IConfiguration {
+public class Configuration implements ISSLConfiguration {
 
     public static final String PATH_SPEC = "/*";
     public static final String SERVER_APPLICATION_PATH = "/path";
