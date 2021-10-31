@@ -1,6 +1,7 @@
-# Jetty Embedded Logging access and messages
+# jetty-embedded-logging
 
-Using CustomRequestLog and servlet filter.
+Using:
 
-CustoRequesstLog log string format parameters explained at https://www.eclipse.org/jetty/javadoc/jetty-9/org/eclipse/jetty/server/CustomRequestLog.html
+- CustomRequestLog log string format parameters explained at https://www.eclipse.org/jetty/javadoc/jetty-9/org/eclipse/jetty/server/CustomRequestLog.html
 
+- Servlet filter with HTTP request/response wrapper for message extraction.
