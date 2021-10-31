@@ -1,4 +1,4 @@
-# jett-embedded
+# jetty-embedded
 
 Jetty embedded workshop
 

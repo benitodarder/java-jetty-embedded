@@ -1,6 +1,8 @@
-# Jetty Embedded Hello World over HTTPS
+# jetty-embedded-hello-world-https
 
-Sample self-certifacate creation, note as empty password is not allowed:
+Simplest services providing access to the Ping controller, and greeting message, over HTTPS.
+
+Sample self-certificate creation, note as empty password is not allowed:
 
     $ <JDK bin folder path>keytool -keystore helloWorldSSL.jks -alias helloWorldSSL -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -genkey -validity 7
     Enter keystore password:
