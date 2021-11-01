@@ -13,3 +13,5 @@ Jetty embedded workshop:
 - jetty-embedded-hello-world-https and now over Https!!.
 
 - jetty-embedded-logging with servlet filters.
+
+- jetty-embedded-camel-caser to provide a testbed for new features: SSL, Web page, logging...
