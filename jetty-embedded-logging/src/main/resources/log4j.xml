@@ -23,7 +23,7 @@
         </layout>
     </appender> 
 
-    <logger name="appenderLogger" additivity="false">
+    <logger name="httpAccessLogger" additivity="false">
         <level value="info"/>
         <appender-ref ref="accessAppender" /> 
     </logger>
