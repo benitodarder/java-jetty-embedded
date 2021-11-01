@@ -2,13 +2,13 @@ package local.tin.examples.jetty.embedded.web.page.web;
 
 import local.tin.tests.jetty.embedded.core.base.IWebPageConfiguration;
 import org.apache.log4j.Logger;
-import local.tin.tests.jetty.embedded.core.base.web.AbstractWebJettyServer;
+import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyWebServer;
 
 /**
  *
  * @author benitodarder
  */
-public class WebPageServer extends AbstractWebJettyServer {
+public class WebPageServer extends AbstractJettyWebServer {
 
 
     private static final Logger LOGGER = Logger.getLogger(WebPageServer.class);

@@ -9,10 +9,10 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
  *
  * @author benitodarder
  */
-public abstract class AbstractWebJettyServer extends AbstractJettyServer {
+public abstract class AbstractJettyWebServer extends AbstractJettyServer {
 
 
-    public AbstractWebJettyServer(IWebPageConfiguration configuration) {
+    public AbstractJettyWebServer(IWebPageConfiguration configuration) {
         super(configuration);        
         
         ResourceHandler resH = new ResourceHandler();
