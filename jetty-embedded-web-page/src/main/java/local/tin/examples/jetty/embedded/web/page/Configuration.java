@@ -6,20 +6,18 @@ import local.tin.examples.jetty.embedded.web.page.web.WebPageShutdownHook;
 import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
 import local.tin.tests.jetty.embedded.core.base.web.ShutdownHook;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
-import local.tin.tests.jetty.embedded.core.base.IConfiguration;
+import local.tin.tests.jetty.embedded.core.base.IWebPageConfiguration;
 
 /**
  *
  * @author benitodarder
  */
-public class Configuration implements IConfiguration {
+public class Configuration implements IWebPageConfiguration {
 
     public static final String PATH_SPEC = "/*";
     public static final String SERVER_APPLICATION_PATH = "/path";
     public static final int SERVER_HTTP_PORT = 8080;
-    public static final String RESOURCE_BASE = "." + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "public";
-    public static final String DOCUMENT_BASE= "index.html";
-    
+   
     @Override
     public String getURLPattern() {
         return PATH_SPEC;
@@ -44,5 +42,14 @@ public class Configuration implements IConfiguration {
     public ShutdownHook getShutdownHook() {
         return new WebPageShutdownHook();
     }
+    
+    @Override
+    public String getResourceBase() {
+        return  "." + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "public";
+    }
 
+    @Override
+    public String getDocumentBase() {
+        return "index.html";
+    }
 }
