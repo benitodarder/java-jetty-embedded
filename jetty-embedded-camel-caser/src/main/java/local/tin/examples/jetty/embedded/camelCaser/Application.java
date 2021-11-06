@@ -1,6 +1,6 @@
 package local.tin.examples.jetty.embedded.camelCaser;
 
-import local.tin.examples.jetty.embedded.camelCaser.web.CammelCaserServer;
+import local.tin.examples.jetty.embedded.camelCaser.web.CamelCaserServer;
 import org.apache.log4j.Logger;
 
 public class Application {
@@ -9,7 +9,7 @@ public class Application {
 
     public static void main(String[] args) throws Exception {
 
-        CammelCaserServer productServer = new CammelCaserServer(new Configuration());
+        CamelCaserServer productServer = new CamelCaserServer(new Configuration());
         Thread thread = new Thread(productServer);
 
         try {

@@ -8,18 +8,18 @@ import org.junit.Test;
  *
  * @author benitodarder
  */
-public class UpperCamelCaserImplTest {
+public class LowerCamelCaserImplTest {
 
     private static final String SAMPLE_SOURCE_01 = "this is a Test";
-    private static final String SAMPLE_OUTPUT_01 = "ThisIsATest";
+    private static final String SAMPLE_OUTPUT_01 = "thisIsATest";
     private static final String ONE_CHAR_ORIGINAL = "a";
-    private static final String ONE_CHAR_TRANSFORMED = "A";
+    private static final String ONE_CHAR_TRANSFORMED = "a";
     private static final String EMPTY_STRING = "";
-    private UpperCamelCaserImpl service;
+    private LowerCamelCaserImpl service;
 
     @Before
     public void setUp() {
-        service = new UpperCamelCaserImpl();
+        service = new LowerCamelCaserImpl();
     }
 
     @Test

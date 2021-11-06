@@ -8,12 +8,12 @@ import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyGralServer;
  *
  * @author benitodarder
  */
-public class CammelCaserServer extends AbstractJettyGralServer {
+public class CamelCaserServer extends AbstractJettyGralServer {
 
-    private static final Logger LOGGER = Logger.getLogger(CammelCaserServer.class);
+    private static final Logger LOGGER = Logger.getLogger(CamelCaserServer.class);
 
 
-    public CammelCaserServer(ISSLConfiguration configuration) {
+    public CamelCaserServer(ISSLConfiguration configuration) {
         super(configuration);
     }
 

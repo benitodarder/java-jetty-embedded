@@ -2,6 +2,8 @@ package local.tin.examples.jetty.embedded.camelCaser;
 
 import local.tin.examples.jetty.embedded.camelCaser.controllers.CamelCaserCtrl;
 import local.tin.examples.jetty.embedded.camelCaser.web.HelloWorldShutdownHook;
+import local.tin.examples.jetty.embedded.camelCaser.web.filters.RequestResponseLogger;
+import local.tin.tests.jetty.embedded.core.base.ILoggingConfiguration;
 import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
 import local.tin.tests.jetty.embedded.core.base.web.ShutdownHook;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -11,10 +13,10 @@ import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
  *
  * @author benitodarder
  */
-public class Configuration implements ISSLConfiguration {
+public class Configuration implements ISSLConfiguration, ILoggingConfiguration {
 
     public static final String PATH_SPEC = "/*";
-    public static final String SERVER_APPLICATION_PATH = "/path";
+    public static final String SERVER_APPLICATION_PATH = "/";
     public static final int SERVER_HTTP_PORT = 8080;
 
     @Override
@@ -55,5 +57,25 @@ public class Configuration implements ISSLConfiguration {
     @Override
     public String getJKSPassword() {
         return "password";
+    }
+
+    @Override
+    public Class getLoggingFilterClass() {
+        return RequestResponseLogger.class;
+    }
+
+    @Override
+    public String getLogginfFilterPath() {
+        return "/*";
+    }
+
+    @Override
+    public String getHttpAccessLogger() {
+        return "httpAccessLogger";
+    }
+    
+    @Override
+    public String getHttpAccessPattern() {
+        return "%{client}a - %u %{yyyy-MM-dd'T'HH:mm:ss.SSSZ}t %m %{ms}Tms \"%U\" %s %O \"%{Referer}i\" \"%{User-Agent}i\"";
     }
 }
