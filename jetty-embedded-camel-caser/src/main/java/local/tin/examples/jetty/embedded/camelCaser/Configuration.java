@@ -46,7 +46,7 @@ public class Configuration implements ISSLConfiguration, ILoggingConfiguration {
 
     @Override
     public String getJKSPath() {
-        return Configuration.class.getResource("/camelCaser.jks").getPath();
+        return "camelCaser.jks";
     }
 
     @Override

@@ -11,22 +11,25 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
  */
 public abstract class AbstractJettyWebServer extends AbstractJettyServer {
 
-
     public AbstractJettyWebServer(IWebPageConfiguration configuration) {
-        super(configuration);        
+        super(configuration);
         
         ResourceHandler resH = new ResourceHandler();
         resH.setDirectoriesListed(true);
         resH.setWelcomeFiles(new String[]{configuration.getDocumentBase()});
         resH.setResourceBase(configuration.getResourceBase());
+        
         ContextHandler resCtx = new ContextHandler();
         resCtx.setHandler(resH);
 
         ContextHandlerCollection handlers = new ContextHandlerCollection(resCtx, getServletContextHandler());
         getJettyServer().setHandler(handlers);
-
+        getLogger().debug("AbstractJettyWebServer ResourceHandler.getDocumentBase : " + resH.getResourceBase());
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String current : resH.getWelcomeFiles()) {
+            stringBuilder.append(" ").append(current).append(" ");
+        }
+        getLogger().debug("AbstractJettyWebServer ResourceHandler.getWelcomeFiles: " + stringBuilder.toString());
     }
-
-
 
 }

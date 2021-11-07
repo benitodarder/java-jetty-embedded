@@ -23,6 +23,7 @@ public abstract class AbstractJettySSLServer extends AbstractJettyServer {
         https.addCustomizer(new SecureRequestCustomizer());
 
         SslContextFactory sslContextFactory = new SslContextFactory();
+        getLogger().debug("AbstractJettySSLServer JKS path:" + configuration.getJKSPath());
         sslContextFactory.setKeyStorePath(configuration.getJKSPath());
         sslContextFactory.setKeyStorePassword(configuration.getKeystorePassword());
         sslContextFactory.setKeyManagerPassword(configuration.getJKSPassword());

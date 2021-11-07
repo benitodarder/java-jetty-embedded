@@ -42,14 +42,17 @@ public class Configuration implements ISSLConfiguration {
         return new HelloWorldShutdownHook();
     }
 
+    @Override
     public String getJKSPath() {
-        return Configuration.class.getResource("/helloWorldSSL.jks").getPath();
+        return "helloWorldSSL.jks";
     }
 
+    @Override
     public String getKeystorePassword() {
         return "password";
     }
 
+    @Override
     public String getJKSPassword() {
         return "password";
     }

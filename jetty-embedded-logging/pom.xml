@@ -10,7 +10,7 @@
         <version>1.0</version>
     </parent>   
     <properties>
-        <jetty.embedded.server.main.class>local.tin.examples.jetty.embedded.web.page.Application</jetty.embedded.server.main.class>
+        <jetty.embedded.server.main.class>local.tin.examples.jetty.embedded.logging.Application</jetty.embedded.server.main.class>
         <commons-io.version>2.7</commons-io.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <maven.compiler.source>1.8</maven.compiler.source>

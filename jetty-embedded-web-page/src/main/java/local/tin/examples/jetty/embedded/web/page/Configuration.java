@@ -1,6 +1,5 @@
 package local.tin.examples.jetty.embedded.web.page;
 
-import java.io.File;
 import local.tin.examples.jetty.embedded.web.page.controllers.WebPageCtrl;
 import local.tin.examples.jetty.embedded.web.page.web.WebPageShutdownHook;
 import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
@@ -45,7 +44,7 @@ public class Configuration implements IWebPageConfiguration {
     
     @Override
     public String getResourceBase() {
-        return  "." + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "public";
+        return  "public";
     }
 
     @Override
