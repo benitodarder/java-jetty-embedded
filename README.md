@@ -1,4 +1,4 @@
-# jetty-embedded
+# java-jetty-embedded
 
 Jetty embedded workshop:
 
