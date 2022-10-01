@@ -29,3 +29,8 @@ Sample self-certificate creation, note as empty password is not allowed:
 
     Warning:
     The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore helloWorldSSL.jks -destkeystore helloWorldSSL.jks -deststoretype pkcs12".
+
+Sample deletion for renewal:
+
+   <JDK bin folder path>keytool -delete -noprompt -alias helloWorldSSL -keystore helloWorldSSL.jks
+   Enter keystore password:  password
