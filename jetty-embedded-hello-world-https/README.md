@@ -32,5 +32,5 @@ Sample self-certificate creation, note as empty password is not allowed:
 
 Sample deletion for renewal:
 
-   $ <JDK bin folder path>keytool -delete -noprompt -alias helloWorldSSL -keystore helloWorldSSL.jks
-   Enter keystore password:  password
+    $ <JDK bin folder path>keytool -delete -noprompt -alias helloWorldSSL -keystore helloWorldSSL.jks
+    Enter keystore password:  password
