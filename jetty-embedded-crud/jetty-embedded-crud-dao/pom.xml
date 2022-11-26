@@ -57,12 +57,12 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jetty-embedded-crud-models-data</artifactId>
+            <artifactId>jetty-embedded-crud-model-persistence</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jetty-embedded-crud-models-domain</artifactId>
+            <artifactId>jetty-embedded-crud-model-views</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

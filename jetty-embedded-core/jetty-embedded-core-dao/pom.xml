@@ -20,12 +20,12 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jetty-embedded-core-models-data</artifactId>
+            <artifactId>jetty-embedded-core-model-persistence</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jetty-embedded-core-models-domain</artifactId>
+            <artifactId>jetty-embedded-core-model-views</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <properties>
         <!-- Base -->
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
         <maven.assembly.plugin.version>3.1.0</maven.assembly.plugin.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>

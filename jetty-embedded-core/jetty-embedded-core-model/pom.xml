@@ -3,15 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>local.tin.tests</groupId>
-        <artifactId>jetty-embedded-root</artifactId>
+        <artifactId>jetty-embedded-core</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>jetty-embedded-core</artifactId>
+    <artifactId>jetty-embedded-core-model</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>jetty-embedded-core-base</module>
-        <module>jetty-embedded-core-model</module>
-        <module>jetty-embedded-core-dao</module>
-        <module>jetty-embedded-core-utils</module>
+        <module>jetty-embedded-core-model-views</module>
+        <module>jetty-embedded-core-model-persistence</module>
     </modules>
+    <name>jetty-embedded-core-model</name>
 </project>
