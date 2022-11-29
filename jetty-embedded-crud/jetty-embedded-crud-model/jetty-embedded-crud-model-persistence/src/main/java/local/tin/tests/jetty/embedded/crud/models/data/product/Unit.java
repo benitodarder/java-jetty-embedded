@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByIinteger;
+import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByInteger;
 
 /**
  *
@@ -15,7 +15,7 @@ import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByIinteger
  */
 @Entity
 @Table(name = "UNIT")
-public class Unit extends NamedByIinteger {
+public class Unit extends NamedByInteger {
 
 
     @Column(name = "abbreviation")

@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByIinteger;
+import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByInteger;
 
 /**
  *
@@ -16,7 +16,7 @@ import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByIinteger
  */
 @Entity
 @Table(name = "COMPONENT")
-public class Component extends NamedByIinteger {
+public class Component extends NamedByInteger {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unitId", referencedColumnName = "id")

@@ -10,7 +10,7 @@ import local.tin.tests.jetty.embedded.core.models.data.interfaces.INamed;
  * @author benitodarder
  */
 @MappedSuperclass
-public abstract class NamedByIinteger extends EnableableByInteger implements INamed<Integer> {
+public abstract class NamedByInteger extends EnableableByInteger implements INamed<Integer> {
 
     @Column(name = "name")
     private String name;
@@ -43,7 +43,7 @@ public abstract class NamedByIinteger extends EnableableByInteger implements INa
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final NamedByIinteger other = (NamedByIinteger) obj;
+        final NamedByInteger other = (NamedByInteger) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
