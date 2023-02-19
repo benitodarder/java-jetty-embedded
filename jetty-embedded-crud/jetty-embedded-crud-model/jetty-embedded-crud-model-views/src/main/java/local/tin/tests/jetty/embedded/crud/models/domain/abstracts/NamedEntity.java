@@ -18,6 +18,6 @@ import local.tin.tests.jetty.embedded.crud.models.domain.product.Unit;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Component.class, Product.class, Unit.class})
-public abstract class AbstractNamedProduct<K extends Serializable> extends Named<K> {
+public abstract class NamedEntity<K extends Serializable> extends Named<K> {
     
 }

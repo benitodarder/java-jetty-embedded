@@ -8,6 +8,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamed;
 /**
  *
  * @author benitodarder
+ * @param <K>
  */
 public abstract class Named<K extends Serializable> extends Enableable<K> implements INamed<K> {
 

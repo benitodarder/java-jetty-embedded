@@ -6,6 +6,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IEnableable;
 /**
  *
  * @author benitodarder
+ * @param <K>
  */
 public abstract class Enableable<K extends Serializable> extends Identifiable<K> implements IEnableable<K> {
     

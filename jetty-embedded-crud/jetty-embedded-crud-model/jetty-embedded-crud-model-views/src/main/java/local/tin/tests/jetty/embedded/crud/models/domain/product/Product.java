@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.AbstractNamedProduct;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntity;
 
 /**
  *
@@ -16,8 +16,9 @@ import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.AbstractNamed
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Product extends AbstractNamedProduct<Integer> {
+public class Product extends NamedEntity<Integer> {
     
+    private Integer id;
     private String description;
     @XmlElementWrapper(name="assemblies")
     @XmlElementRef     
@@ -48,4 +49,14 @@ public class Product extends AbstractNamedProduct<Integer> {
         return "Product{" + "id=" + getId() + ", name=" + getName() + ", description=" + description + ", assemblies=" + assemblies + '}';
     }    
 
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }    
 }

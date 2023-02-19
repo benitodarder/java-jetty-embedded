@@ -10,20 +10,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiabl
  * @param <K>
  */
 public abstract class Identifiable<K extends Serializable> implements IIdentifiable<K> {
-
-    private K id;
-
-    @Override
-    public K getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(K id) {
-        this.id = id;
-    }
-   
-    
+  
     
     @Override
     public int hashCode() {
@@ -49,7 +36,7 @@ public abstract class Identifiable<K extends Serializable> implements IIdentifia
 
     @Override
     public String toString() {
-        return "View{" + "id=" + id + '}';
+        return "Identifiable{" + "id=" + getId() + '}';
     }
     
     

@@ -5,6 +5,7 @@ import java.io.Serializable;
 /**
  *
  * @author benito.darder
+ * @param <K>
  */
 public interface INamed<K extends Serializable> extends IEnableable<K> {
     

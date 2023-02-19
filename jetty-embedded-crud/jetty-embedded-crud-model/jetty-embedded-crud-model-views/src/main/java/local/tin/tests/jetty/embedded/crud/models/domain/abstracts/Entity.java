@@ -15,7 +15,7 @@ import local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Assembly.class})
-public abstract class AbstractProduct<K extends Serializable> extends Enableable<K> {
+public abstract class Entity<K extends Serializable> extends Enableable<K> {
     
    
     

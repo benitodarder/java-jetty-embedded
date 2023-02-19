@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.AbstractProduct;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.Entity;
 import local.tin.tests.jetty.embedded.crud.models.domain.deserializers.RequestDeserializer;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
@@ -14,7 +14,7 @@ import org.codehaus.jackson.map.annotate.JsonDeserialize;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({AbstractProduct.class})
+@XmlSeeAlso({Entity.class})
 @JsonDeserialize(using = RequestDeserializer.class)
 public class Request extends local.tin.tests.jetty.embedded.core.models.domain.messaging.Request {
 

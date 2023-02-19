@@ -6,8 +6,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import local.tin.examples.jetty.embedded.camelCaser.services.CamelCaserServiceFactory;
-import local.tin.examples.jetty.embedded.camelCaser.services.LowerCamelCaserImpl;
-import local.tin.examples.jetty.embedded.camelCaser.services.UpperCamelCaserImpl;
 
 /**
  *

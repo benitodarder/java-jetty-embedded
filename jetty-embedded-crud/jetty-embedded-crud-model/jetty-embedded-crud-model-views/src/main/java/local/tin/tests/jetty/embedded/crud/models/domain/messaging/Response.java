@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.AbstractProduct;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.Entity;
 
 /**
  *
@@ -12,7 +12,7 @@ import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.AbstractProdu
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({AbstractProduct.class})
+@XmlSeeAlso({Entity.class})
 public class Response extends local.tin.tests.jetty.embedded.core.models.domain.messaging.Response {
     
  
