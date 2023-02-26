@@ -4,7 +4,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import local.tin.tests.jetty.embedded.core.models.domain.abstracts.View;
 import local.tin.tests.jetty.embedded.core.models.domain.enums.ErrorCode;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IView;
 
@@ -14,7 +13,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IView;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({View.class})
+@XmlSeeAlso({IView.class})
 public class CommonError implements IView {
     
     private ErrorCode errorCode;

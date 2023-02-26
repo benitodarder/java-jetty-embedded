@@ -9,10 +9,10 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import local.tin.tests.jetty.embedded.core.models.domain.abstracts.View;
-import local.tin.tests.jetty.embedded.core.models.domain.abstracts.Identifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.errors.CommonError;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IView;
 
 /**
  *
@@ -20,8 +20,8 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({View.class})
-public abstract class Response<K extends Identifiable> implements IMessage {
+@XmlSeeAlso({IView.class})
+public abstract class Response<K extends IIdentifiable> implements IMessage {
     
     private boolean success;
     @XmlElementWrapper(name="data")

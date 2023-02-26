@@ -6,10 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import local.tin.tests.jetty.embedded.core.models.domain.abstracts.View;
-import local.tin.tests.jetty.embedded.core.models.domain.abstracts.Identifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IView;
 
 /**
  *
@@ -17,7 +16,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({View.class})
+@XmlSeeAlso({IView.class})
 public abstract class Request<K extends IIdentifiable> implements IMessage {
 
     private String modelClass;

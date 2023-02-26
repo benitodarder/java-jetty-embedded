@@ -1,5 +1,6 @@
-package local.tin.tests.jetty.embedded.core.models.domain.abstracts;
+package local.tin.tests.jetty.embedded.crud.models.domain.abstracts;
 
+import java.io.Serializable;
 import java.util.Objects;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable;
 
@@ -8,22 +9,8 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiabl
  * @author benitodarder
  * @param <K>
  */
-public abstract class IdentifiableByInteger implements IIdentifiable<Integer> {
+public abstract class Identifiable<K extends Serializable> implements IIdentifiable<K> {
   
-
-    private Integer id;
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
-   
-    
     
     @Override
     public int hashCode() {
@@ -43,7 +30,7 @@ public abstract class IdentifiableByInteger implements IIdentifiable<Integer> {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final IdentifiableByInteger other = (IdentifiableByInteger) obj;
+        final Identifiable other = (Identifiable) obj;
         return Objects.equals(this.getId(), other.getId());
     }
 

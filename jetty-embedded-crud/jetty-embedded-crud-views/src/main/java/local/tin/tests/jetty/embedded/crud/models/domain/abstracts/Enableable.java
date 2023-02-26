@@ -1,5 +1,6 @@
-package local.tin.tests.jetty.embedded.core.models.domain.abstracts;
+package local.tin.tests.jetty.embedded.crud.models.domain.abstracts;
 
+import java.io.Serializable;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IEnableable;
 
 /**
@@ -7,7 +8,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IEnableable;
  * @author benitodarder
  * @param <K>
  */
-public abstract class EnableableByInteger extends IdentifiableByInteger implements IEnableable<Integer> {
+public abstract class Enableable<K extends Serializable> extends Identifiable<K> implements IEnableable<K> {
     
     private boolean enabled;
 
@@ -39,7 +40,7 @@ public abstract class EnableableByInteger extends IdentifiableByInteger implemen
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final EnableableByInteger other = (EnableableByInteger) obj;
+        final Enableable<?> other = (Enableable<?>) obj;
         if (this.enabled != other.enabled) {
             return false;
         }
