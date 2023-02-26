@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
-import local.tin.tests.jetty.embedded.core.models.data.abstracts.Enableable;
+import local.tin.tests.jetty.embedded.crud.dao.model.abstracts.Enableable;
 import local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId;
 
 /**

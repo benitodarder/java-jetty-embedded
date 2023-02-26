@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.crud.dao.model.embeddables;
 
 import java.util.Objects;
 import javax.persistence.Column;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable;
+import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable;
 
 /**
  *

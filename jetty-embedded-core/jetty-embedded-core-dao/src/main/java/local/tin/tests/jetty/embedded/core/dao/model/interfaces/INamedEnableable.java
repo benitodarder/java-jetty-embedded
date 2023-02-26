@@ -1,4 +1,4 @@
-package local.tin.tests.jetty.embedded.core.models.data.interfaces;
+package local.tin.tests.jetty.embedded.core.dao.model.interfaces;
 
 import java.io.Serializable;
 

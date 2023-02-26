@@ -1,9 +1,9 @@
-package local.tin.tests.jetty.embedded.core.models.data.abstracts;
+package local.tin.tests.jetty.embedded.crud.dao.model.abstracts;
 
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEnableable;
+import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEnableable;
 
 
 /**

@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.crud.dao.impl;
 
 import javax.persistence.EntityManagerFactory;
 import local.tin.tests.jetty.embedded.core.dao.impl.EnableableDAO;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable;
+import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
 import local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId;

@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedEnableableByInteger;
+import local.tin.tests.jetty.embedded.crud.dao.model.abstracts.NamedEnableableByInteger;
 
 /**
  *

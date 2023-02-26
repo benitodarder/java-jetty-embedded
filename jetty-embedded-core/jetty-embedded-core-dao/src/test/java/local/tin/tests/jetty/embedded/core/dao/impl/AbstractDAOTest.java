@@ -10,7 +10,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import javax.persistence.TransactionRequiredException;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable;
+import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
 import org.apache.log4j.Logger;
@@ -44,10 +44,10 @@ public class AbstractDAOTest extends BaseDAOTest {
     public static final String QUERY_PREFIX = "select e from IIdentifiable e";
     public static final String QUERY_SUFIX_01 = " where e.p1 = :p1 and e.p2 = :p2";
     public static final String QUERY_SUFIX_02 = " where e.p2 = :p2 and e.p1 = :p1";
-    protected static local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable mockedAbstractDataObject;
+    protected static local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable mockedAbstractDataObject;
     protected static local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable mockedAbstractDomainObject;
     protected static local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId mockedICompositeId;
-    protected static local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable mockedEmbeddable;
+    protected static local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable mockedEmbeddable;
     private static final String LOCALIZED_MESSAGE = "Fai un sol de caralho";
     private static Logger mockedLogger;
     private EntityTransaction mockedEntityTransaction;
@@ -62,7 +62,7 @@ public class AbstractDAOTest extends BaseDAOTest {
         mockedAbstractDataObject = mock(IIdentifiable.class);
         mockedAbstractDomainObject = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable.class);
         mockedICompositeId = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId.class);
-        mockedEmbeddable = mock(local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable.class);
+        mockedEmbeddable = mock(local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable.class);
     }
 
     @Before
@@ -452,7 +452,7 @@ public class AbstractDAOTest extends BaseDAOTest {
     @Test
     public void getDataObject_returns_expected_object() throws DAOException {
 
-        local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable result = dao.getDataObject(mockedAbstractDomainObject, 0);
+        local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable result = dao.getDataObject(mockedAbstractDomainObject, 0);
 
         assertThat(result, equalTo(mockedAbstractDataObject));
     }
@@ -515,7 +515,7 @@ public class AbstractDAOTest extends BaseDAOTest {
     public void retrieveAll_returns_expected_query() throws DAOException {
         Query mockedTypedQuery = mock(Query.class);
         when(mockedEntityManager.createQuery(QUERY_PREFIX)).thenReturn(mockedTypedQuery);
-        List<local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> dataResults = new ArrayList<>();
+        List<local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable> dataResults = new ArrayList<>();
         dataResults.add(mockedAbstractDataObject);
         when(mockedTypedQuery.getResultList()).thenReturn(dataResults);
         
@@ -537,7 +537,7 @@ public class AbstractDAOTest extends BaseDAOTest {
     }    
 }
 
-class AbstractDAOWrapperWithEmbeddedId extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
+class AbstractDAOWrapperWithEmbeddedId extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable> {
 
     public AbstractDAOWrapperWithEmbeddedId(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
@@ -550,12 +550,12 @@ class AbstractDAOWrapperWithEmbeddedId extends IdentifiableDAO<local.tin.tests.j
     }
 
     @Override
-    protected local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable getEmmbeddedId(ICompositeId compositeId) throws DAOException {
+    protected local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable getEmmbeddedId(ICompositeId compositeId) throws DAOException {
         return AbstractDAOTest.mockedEmbeddable;
     }
 
     @Override
-    protected ICompositeId getCompositedId(local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable iEmbeddable) throws DAOException {
+    protected ICompositeId getCompositedId(local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable iEmbeddable) throws DAOException {
         return AbstractDAOTest.mockedICompositeId;
     }
 
@@ -591,7 +591,7 @@ class AbstractDAOWrapperWithEmbeddedId extends IdentifiableDAO<local.tin.tests.j
 
 }
 
-class AbstractDAOWrapper extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
+class AbstractDAOWrapper extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable> {
 
     public AbstractDAOWrapper(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

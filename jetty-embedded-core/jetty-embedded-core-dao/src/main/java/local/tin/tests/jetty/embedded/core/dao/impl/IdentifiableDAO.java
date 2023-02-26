@@ -12,7 +12,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.persistence.TransactionRequiredException;
 import local.tin.tests.jetty.embedded.core.dao.interfaces.IAbstractDAO;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable;
+import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
 import org.apache.log4j.Logger;
@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
  * @param <C0>
  * @param <C1>
  */
-public abstract class IdentifiableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable>  implements IAbstractDAO<C0> {
+public abstract class IdentifiableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, C1 extends local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable>  implements IAbstractDAO<C0> {
     
     
     public static final int DEFAULT_DEPTH_ENTITY = 1;

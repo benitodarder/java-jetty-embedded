@@ -9,8 +9,8 @@
     <artifactId>jetty-embedded-core</artifactId>
     <packaging>pom</packaging>
     <modules>
+       <module>jetty-embedded-core-views</module>        
         <module>jetty-embedded-core-base</module>
-        <module>jetty-embedded-core-model</module>
         <module>jetty-embedded-core-dao</module>
         <module>jetty-embedded-core-utils</module>
     </modules>

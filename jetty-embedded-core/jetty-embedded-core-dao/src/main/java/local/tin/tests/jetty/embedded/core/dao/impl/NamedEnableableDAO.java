@@ -9,7 +9,7 @@ import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException
  * @param <C0>
  * @param <C1>
  */
-public abstract class NamedEnableableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamedEnableable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.INamedEnableable> extends EnableableDAO<C0, C1>{
+public abstract class NamedEnableableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamedEnableable, C1 extends local.tin.tests.jetty.embedded.core.dao.model.interfaces.INamedEnableable> extends EnableableDAO<C0, C1>{
      
     protected NamedEnableableDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
