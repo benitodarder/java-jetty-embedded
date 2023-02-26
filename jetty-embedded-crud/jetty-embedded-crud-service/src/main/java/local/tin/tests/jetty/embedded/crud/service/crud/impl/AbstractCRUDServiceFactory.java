@@ -2,8 +2,8 @@ package local.tin.tests.jetty.embedded.crud.service.crud.impl;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractDAO;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractDAOFactory;
+import local.tin.tests.jetty.embedded.core.dao.impl.IdentifiableDAO;
+import local.tin.tests.jetty.embedded.core.dao.impl.DAOFactory;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.ServiceException;
 import org.apache.log4j.Logger;
@@ -14,9 +14,9 @@ import org.apache.log4j.Logger;
  */
 public abstract class AbstractCRUDServiceFactory {
     
-    private final AbstractDAOFactory baseDAOFactory;
+    private final DAOFactory baseDAOFactory;
 
-    protected AbstractCRUDServiceFactory(AbstractDAOFactory baseDAOFactory) {
+    protected AbstractCRUDServiceFactory(DAOFactory baseDAOFactory) {
         this.baseDAOFactory = baseDAOFactory;
     }
 
@@ -26,8 +26,8 @@ public abstract class AbstractCRUDServiceFactory {
         try {
             String crudFullName = getCRUDFullName(klass);
             Class<?> daoClass = Class.forName(crudFullName);
-            Constructor<?> constructor = daoClass.getDeclaredConstructor(AbstractDAO.class);
-            AbstractDAO abstractDAO = baseDAOFactory.getDAO(klass);
+            Constructor<?> constructor = daoClass.getDeclaredConstructor(IdentifiableDAO.class);
+            IdentifiableDAO abstractDAO = baseDAOFactory.getDAO(klass);
             return (AbstractCRUDService) constructor.newInstance(abstractDAO);
         } catch (DAOException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | ClassNotFoundException ex) {
             throw new ServiceException("Could not instantiate CRUD for class: " + klass.getSimpleName(), ex);

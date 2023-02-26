@@ -51,14 +51,14 @@ public class AbstractDAOTest extends BaseDAOTest {
     private static final String LOCALIZED_MESSAGE = "Fai un sol de caralho";
     private static Logger mockedLogger;
     private EntityTransaction mockedEntityTransaction;
-    private AbstractDAO dao;
+    private IdentifiableDAO dao;
 
     @BeforeClass
     public static void setUpClass() {
         BaseDAOTest.setUpClass();
         mockedLogger = mock(Logger.class);
         PowerMockito.mockStatic(Logger.class);
-        when(Logger.getLogger(AbstractDAO.class)).thenReturn(mockedLogger);
+        when(Logger.getLogger(IdentifiableDAO.class)).thenReturn(mockedLogger);
         mockedAbstractDataObject = mock(IIdentifiable.class);
         mockedAbstractDomainObject = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable.class);
         mockedICompositeId = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId.class);
@@ -537,7 +537,7 @@ public class AbstractDAOTest extends BaseDAOTest {
     }    
 }
 
-class AbstractDAOWrapperWithEmbeddedId extends AbstractDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
+class AbstractDAOWrapperWithEmbeddedId extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
 
     public AbstractDAOWrapperWithEmbeddedId(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
@@ -591,7 +591,7 @@ class AbstractDAOWrapperWithEmbeddedId extends AbstractDAO<local.tin.tests.jetty
 
 }
 
-class AbstractDAOWrapper extends AbstractDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
+class AbstractDAOWrapper extends IdentifiableDAO<local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable> {
 
     public AbstractDAOWrapper(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

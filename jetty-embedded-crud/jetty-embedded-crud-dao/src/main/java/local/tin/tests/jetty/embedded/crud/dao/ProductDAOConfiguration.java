@@ -2,14 +2,14 @@ package local.tin.tests.jetty.embedded.crud.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-import local.tin.tests.jetty.embedded.core.dao.AbstractDAOConfiguration;
+import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;
 import org.apache.log4j.Logger;
 
 /**
  *
  * @author benito.darder
  */
-public class ProductDAOConfiguration extends AbstractDAOConfiguration {
+public class ProductDAOConfiguration extends DAOConfiguration {
 
     private static final Logger LOGGER = Logger.getLogger(ProductDAOConfiguration.class);
     private static Map<String, String> configurationMap;

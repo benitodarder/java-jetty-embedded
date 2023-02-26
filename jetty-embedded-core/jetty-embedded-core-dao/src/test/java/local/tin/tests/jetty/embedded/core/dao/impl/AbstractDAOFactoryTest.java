@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.core.dao.impl;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import local.tin.tests.jetty.embedded.core.dao.AbstractDAOConfiguration;
+import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -20,11 +20,11 @@ import org.powermock.modules.junit4.PowerMockRunner;
  * @author benito.darder
  */
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({Persistence.class, EntityManagerFactory.class, AbstractDAOConfiguration.class})
+@PrepareForTest({Persistence.class, EntityManagerFactory.class, DAOConfiguration.class})
 public class AbstractDAOFactoryTest {
     
     private static EntityManagerFactory mockedEntityManagerFactory;
-    private AbstractDAOFactory dAOBaseFactory;
+    private DAOFactory dAOBaseFactory;
     
     @BeforeClass
     public static void setUpClass() {
@@ -46,7 +46,7 @@ public class AbstractDAOFactoryTest {
     
 }
 
-class BaseFactoryWrapper extends AbstractDAOFactory {
+class BaseFactoryWrapper extends DAOFactory {
 
     @Override
     protected EntityManagerFactory getEntityManagerFactory() {

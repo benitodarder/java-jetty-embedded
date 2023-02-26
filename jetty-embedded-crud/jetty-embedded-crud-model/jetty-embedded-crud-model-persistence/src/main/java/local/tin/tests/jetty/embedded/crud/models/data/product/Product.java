@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByInteger;
+import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedEnableableByInteger;
 
 
 /**
@@ -16,7 +16,7 @@ import local.tin.tests.jetty.embedded.core.models.data.abstracts.NamedByInteger;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product extends NamedByInteger {
+public class Product extends NamedEnableableByInteger {
     
     @Column(name = "description")
     private String description;

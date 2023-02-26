@@ -1,6 +1,6 @@
 package local.tin.tests.jetty.embedded.crud.service.crud.impl;
 
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractDAO;
+import local.tin.tests.jetty.embedded.core.dao.impl.IdentifiableDAO;
 import local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly;
 
 
@@ -10,7 +10,7 @@ import local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly;
  */
 public class AssemblyCRUD extends AbstractCRUDService<Assembly> {
 
-    public AssemblyCRUD(AbstractDAO dao) {
+    public AssemblyCRUD(IdentifiableDAO dao) {
         super(dao);
     }
     

@@ -7,21 +7,21 @@ import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException
  *
  * @author benitodarder
  */
-public abstract class AbstractNamedDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamed, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.INamed> extends AbstractEnableableDAO<C0, C1>{
+public abstract class EnableableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IEnableable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.IEnableable> extends IdentifiableDAO<C0, C1>{
      
-    protected AbstractNamedDAO(EntityManagerFactory entityManagerFactory) {
+    protected EnableableDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);
     }
 
     @Override
     protected C1 updateDataCommonFields(C0 domainObject, C1 dataObject) throws DAOException {
-        dataObject.setName(domainObject.getName());
+        dataObject.setEnabled(domainObject.isEnabled());
         return super.updateDataCommonFields(domainObject, dataObject); 
     }
 
     @Override
     protected C0 updateDomainCommonFields(C0 domainObject, C1 dataObject) throws DAOException {
-        domainObject.setName(dataObject.getName());
+        domainObject.setEnabled(dataObject.isEnabled());
         return super.updateDomainCommonFields(domainObject, dataObject); 
     }
     

@@ -1,14 +1,13 @@
 package local.tin.tests.jetty.embedded.crud.models.domain.product;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntity;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntityByInteger;
 
 /**
  *
@@ -16,9 +15,8 @@ import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntity;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Product extends NamedEntity<Integer> {
+public class Product extends NamedEntityByInteger {
     
-    private Integer id;
     private String description;
     @XmlElementWrapper(name="assemblies")
     @XmlElementRef     
@@ -50,13 +48,4 @@ public class Product extends NamedEntity<Integer> {
     }    
 
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }    
 }

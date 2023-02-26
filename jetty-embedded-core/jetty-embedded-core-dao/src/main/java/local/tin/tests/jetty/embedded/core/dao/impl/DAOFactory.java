@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
  * 
  * @author benito.darder
  */
-public abstract class AbstractDAOFactory {
+public abstract class DAOFactory {
      
     protected abstract EntityManagerFactory getEntityManagerFactory();
     
@@ -23,12 +23,12 @@ public abstract class AbstractDAOFactory {
         getEntityManagerFactory().close();
     }
     
-    public AbstractDAO getDAO(Class<?> klass) throws DAOException   {
+    public IdentifiableDAO getDAO(Class<?> klass) throws DAOException   {
         try {
             String daoName = getDAOFullName(klass);
             Class<?> daoClass = Class.forName(daoName);
             Constructor<?> constructor = daoClass.getDeclaredConstructor(EntityManagerFactory.class);
-            return (AbstractDAO) constructor.newInstance(getEntityManagerFactory());
+            return (IdentifiableDAO) constructor.newInstance(getEntityManagerFactory());
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | ClassNotFoundException ex) {
             getLogger().error(ex);
             throw new DAOException(ex);

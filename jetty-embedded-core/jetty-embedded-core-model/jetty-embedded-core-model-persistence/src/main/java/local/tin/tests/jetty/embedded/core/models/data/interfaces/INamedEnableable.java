@@ -1,12 +1,13 @@
-package local.tin.tests.jetty.embedded.core.models.domain.interfaces;
+package local.tin.tests.jetty.embedded.core.models.data.interfaces;
 
 import java.io.Serializable;
 
 /**
  *
  * @author benito.darder
+ * @param <K>
  */
-public interface INamed<K extends Serializable> extends IEnableable<K> {
+public interface INamedEnableable<K extends Serializable> extends IEnableable<K> {
     
     /**
      * Returns the element name

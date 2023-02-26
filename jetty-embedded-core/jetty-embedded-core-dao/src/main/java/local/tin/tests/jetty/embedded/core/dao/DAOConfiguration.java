@@ -1,21 +1,37 @@
 package local.tin.tests.jetty.embedded.core.dao;
 
+import java.util.Map;
+import java.util.Properties;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.ServiceException;
-
+import org.apache.log4j.Logger;
 
 /**
  * Extensions must initialize configuration with a call to resetConfiguration
  *
  * @author benito.darder
  */
-public abstract class AbstractDAOConfiguration extends AbstractConfiguration {
+public abstract class DAOConfiguration  {
 
     public static final String DAO_PERSISTENCE_UNIT = "dao.persistence.unit";
     public static final String DAO_BASE_PACKAGE = "dao.implementation.package";
     public static final String CRUD_BASE_PACKAGE = "crud.base.package";
     public static final String MODEL_DOMAIN_PACKAGE = "model.domain.package";
- 
+
+    public abstract Map<String, String> getConfigurationMap();
+
+    public abstract Logger getLogger();
+
+    public void resetConfiguration() {
+        getConfigurationMap().clear();
+    }
+
+    public void loadProperties(Properties properties) {
+        for (Map.Entry<Object, Object> current : properties.entrySet()) {
+            getConfigurationMap().put((String) current.getKey(), (String) current.getValue());
+        }
+    }
+
     /**
      * Set persistence unit name.
      *
@@ -68,12 +84,12 @@ public abstract class AbstractDAOConfiguration extends AbstractConfiguration {
         }
         return crudBasePackage;
     }
-    
+
     public void setModelDomainPackage(String modelDomainPackage) {
         getConfigurationMap().put(MODEL_DOMAIN_PACKAGE, modelDomainPackage);
     }
-    
+
     public String getModelDomainPackage() {
         return getConfigurationMap().get(MODEL_DOMAIN_PACKAGE);
-    }      
+    }
 }

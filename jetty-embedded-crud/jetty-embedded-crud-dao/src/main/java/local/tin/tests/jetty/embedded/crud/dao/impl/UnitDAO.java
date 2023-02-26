@@ -1,7 +1,7 @@
 package local.tin.tests.jetty.embedded.crud.dao.impl;
 
 import javax.persistence.EntityManagerFactory;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractEnableableDAO;
+import local.tin.tests.jetty.embedded.core.dao.impl.EnableableDAO;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.crud.models.data.product.Unit;
 
@@ -9,7 +9,7 @@ import local.tin.tests.jetty.embedded.crud.models.data.product.Unit;
  *
  * @author benito.darder
  */
-public class UnitDAO extends AbstractEnableableDAO<local.tin.tests.jetty.embedded.crud.models.domain.product.Unit, Unit> {
+public class UnitDAO extends EnableableDAO<local.tin.tests.jetty.embedded.crud.models.domain.product.Unit, Unit> {
 
     public UnitDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

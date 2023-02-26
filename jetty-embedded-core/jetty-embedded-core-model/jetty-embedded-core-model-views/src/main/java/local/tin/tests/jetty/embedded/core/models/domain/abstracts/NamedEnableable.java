@@ -1,18 +1,17 @@
-package local.tin.tests.jetty.embedded.core.models.data.abstracts;
+package local.tin.tests.jetty.embedded.core.models.domain.abstracts;
 
+import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import local.tin.tests.jetty.embedded.core.models.data.interfaces.INamed;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamedEnableable;
+
 
 /**
  *
  * @author benitodarder
+ * @param <K>
  */
-@MappedSuperclass
-public abstract class NamedByInteger extends EnableableByInteger implements INamed<Integer> {
+public abstract class NamedEnableable<K extends Serializable> extends Enableable<K> implements INamedEnableable<K> {
 
-    @Column(name = "name")
     private String name;
 
     @Override
@@ -43,7 +42,7 @@ public abstract class NamedByInteger extends EnableableByInteger implements INam
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final NamedByInteger other = (NamedByInteger) obj;
+        final NamedEnableable other = (NamedEnableable) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

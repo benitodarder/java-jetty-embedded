@@ -1,16 +1,14 @@
 package local.tin.tests.jetty.embedded.core.models.domain.abstracts;
 
-import java.io.Serializable;
 import java.util.Objects;
-import local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamed;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.INamedEnableable;
 
 
 /**
  *
  * @author benitodarder
- * @param <K>
  */
-public abstract class Named<K extends Serializable> extends Enableable<K> implements INamed<K> {
+public abstract class NamedEnableableByInteger extends EnableableByInteger implements INamedEnableable<Integer> {
 
     private String name;
 
@@ -42,7 +40,7 @@ public abstract class Named<K extends Serializable> extends Enableable<K> implem
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Named other = (Named) obj;
+        final NamedEnableableByInteger other = (NamedEnableableByInteger) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

@@ -1,7 +1,7 @@
 package local.tin.tests.jetty.embedded.crud.dao.impl;
 
 import javax.persistence.EntityManagerFactory;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractEnableableDAO;
+import local.tin.tests.jetty.embedded.core.dao.impl.EnableableDAO;
 import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
@@ -14,7 +14,7 @@ import local.tin.tests.jetty.embedded.crud.models.data.product.Product;
  *
  * @author benito.darder
  */
-public class AssemblyDAO extends AbstractEnableableDAO<local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly, Assembly> {
+public class AssemblyDAO extends EnableableDAO<local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly, Assembly> {
 
     public AssemblyDAO(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory);

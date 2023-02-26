@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.crud.service.crud.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractDAO;
+import local.tin.tests.jetty.embedded.core.dao.impl.IdentifiableDAO;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.ServiceException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable;
@@ -16,9 +16,9 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiabl
  */
 public abstract class AbstractCRUDService<C extends IIdentifiable> {
     
-    private final AbstractDAO dao;
+    private final IdentifiableDAO dao;
     
-    public AbstractCRUDService(AbstractDAO dao) {
+    public AbstractCRUDService(IdentifiableDAO dao) {
         this.dao = dao;
     }
     

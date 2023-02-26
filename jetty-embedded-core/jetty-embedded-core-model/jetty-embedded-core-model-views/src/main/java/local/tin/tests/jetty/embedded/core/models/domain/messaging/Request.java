@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import local.tin.tests.jetty.embedded.core.models.domain.abstracts.View;
 import local.tin.tests.jetty.embedded.core.models.domain.abstracts.Identifiable;
+import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
 
 /**
@@ -17,11 +18,11 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({View.class})
-public abstract class Request implements IMessage {
+public abstract class Request<K extends IIdentifiable> implements IMessage {
 
     private String modelClass;
     @XmlElementRef
-    private Identifiable item;
+    private K item;
 
     public String getModelClass() {
         return modelClass;
@@ -31,11 +32,11 @@ public abstract class Request implements IMessage {
         this.modelClass = modelClass;
     }
 
-    public Identifiable getItem() {
+    public K getItem() {
         return item;
     }
 
-    public void setItem(Identifiable item) {
+    public void setItem(K item) {
         this.item = item;
     }
 

@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
  * @param <C0>
  * @param <C1>
  */
-public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable>  implements IAbstractDAO<C0> {
+public abstract class IdentifiableDAO<C0 extends local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable, C1 extends local.tin.tests.jetty.embedded.core.models.data.interfaces.IIdentifiable>  implements IAbstractDAO<C0> {
     
     
     public static final int DEFAULT_DEPTH_ENTITY = 1;
@@ -31,11 +31,11 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.jetty.embedded.core
     public static final String COULD_NOT_PARSE_STRING_INTO_JAVASQL_DATE = "Could not parse string into java.sql.Date";    
     public static final String UNEXPECTED_RUNTIME_EXCEPTION_MESSAGE_PREFIX = " unexpected RuntimeException: ";
     public static final String NOT_SUPPORTED_YET = "Not supported yet.";    
-    private static final Logger LOGGER = Logger.getLogger(AbstractDAO.class);
+    private static final Logger LOGGER = Logger.getLogger(IdentifiableDAO.class);
     private final EntityManagerFactory entityManagerFactory;
     
 
-    protected AbstractDAO(EntityManagerFactory entityManagerFactory) {
+    protected IdentifiableDAO(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
     }
 

@@ -2,12 +2,12 @@ package local.tin.tests.jetty.embedded.crud.dao.impl;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import local.tin.tests.jetty.embedded.core.dao.impl.AbstractDAOFactory;
+import local.tin.tests.jetty.embedded.core.dao.impl.DAOFactory;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.crud.dao.ProductDAOConfiguration;
 import org.apache.log4j.Logger;
 
-public class ProductDAOFactory extends AbstractDAOFactory {
+public class ProductDAOFactory extends DAOFactory {
 
     public static final String UNEXPECTED_DAO_EXCEPTION_CREATING_ENTITY_M = "Unexpected DAOException creating entity manager factory: ";    
     private static final Object LOCK = new Object();

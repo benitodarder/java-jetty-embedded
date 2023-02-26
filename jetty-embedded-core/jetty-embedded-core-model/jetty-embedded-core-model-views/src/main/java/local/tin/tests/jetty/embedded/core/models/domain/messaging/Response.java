@@ -21,12 +21,12 @@ import local.tin.tests.jetty.embedded.core.models.domain.interfaces.IMessage;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({View.class})
-public abstract class Response implements IMessage {
+public abstract class Response<K extends Identifiable> implements IMessage {
     
     private boolean success;
     @XmlElementWrapper(name="data")
     @XmlElementRef
-    private Collection<Identifiable> responses;
+    private Collection<K> responses;
     @XmlElementRef
     private CommonError error;
 
@@ -38,11 +38,11 @@ public abstract class Response implements IMessage {
         this.success = success;
     }
 
-    public Collection<Identifiable> getResponses() {
+    public Collection<K> getResponses() {
         return responses;
     }
 
-    public void setResponses(Collection<Identifiable> responses) {
+    public void setResponses(Collection<K> responses) {
         this.responses = responses;
     }
 
@@ -85,9 +85,9 @@ public abstract class Response implements IMessage {
     }
 
 
-    public void addResponse(Identifiable response) {
+    public void addResponse(K response) {
         if (getResponses() == null) {
-            setResponses(new HashSet<Identifiable>());
+            setResponses(new HashSet<K>());
         }
         getResponses().add(response);
     }
