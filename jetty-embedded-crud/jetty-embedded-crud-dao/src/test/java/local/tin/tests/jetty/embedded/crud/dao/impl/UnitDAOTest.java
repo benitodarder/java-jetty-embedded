@@ -15,7 +15,7 @@ public class UnitDAOTest extends BaseDAOTest {
     protected static final String ABBREVIATION = "abbreviation";    
     private UnitDAO dao;
     private local.tin.tests.jetty.embedded.crud.models.domain.product.Unit domainObject;
-    private local.tin.tests.jetty.embedded.crud.models.data.product.Unit dataObject;
+    private local.tin.tests.jetty.embedded.crud.dao.model.product.Unit dataObject;
     
     @Before
     public void setUp() throws DAOException {
@@ -23,7 +23,7 @@ public class UnitDAOTest extends BaseDAOTest {
         setComponentMocks();
         dao = new UnitDAO(mockedEntityManagerFactory);
         domainObject = new local.tin.tests.jetty.embedded.crud.models.domain.product.Unit();
-        dataObject = new local.tin.tests.jetty.embedded.crud.models.data.product.Unit();
+        dataObject = new local.tin.tests.jetty.embedded.crud.dao.model.product.Unit();
     }
             
     @Test

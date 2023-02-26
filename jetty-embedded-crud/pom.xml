@@ -9,7 +9,7 @@
     <artifactId>jetty-embedded-crud</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>jetty-embedded-crud-model</module>
+        <module>jetty-embedded-crud-views</module>
         <module>jetty-embedded-crud-dao</module>
         <module>jetty-embedded-crud-service</module>
     </modules>

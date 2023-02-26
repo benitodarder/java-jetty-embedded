@@ -19,12 +19,12 @@ public class AssemblyDAOTest extends BaseDAOTest {
     
     private AssemblyDAO dao;
     private local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly domainObject;
-    private local.tin.tests.jetty.embedded.crud.models.data.product.Assembly dataObject;
-    private local.tin.tests.jetty.embedded.crud.models.data.embeddables.AssemblyId dataObjectId;
+    private local.tin.tests.jetty.embedded.crud.dao.model.product.Assembly dataObject;
+    private local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId dataObjectId;
     private local.tin.tests.jetty.embedded.crud.models.domain.compositeIds.AssemblyId domainbjectId;
     private ProductDAO mockedProductDAO;
     private local.tin.tests.jetty.embedded.crud.models.domain.product.Product mockedDomainProduct;
-    private local.tin.tests.jetty.embedded.crud.models.data.product.Product mockedDataProduct; 
+    private local.tin.tests.jetty.embedded.crud.dao.model.product.Product mockedDataProduct; 
 
     
     @Before
@@ -32,13 +32,13 @@ public class AssemblyDAOTest extends BaseDAOTest {
         setUpBaseMocks();
         dao = new AssemblyDAO(mockedEntityManagerFactory);
         domainObject = new local.tin.tests.jetty.embedded.crud.models.domain.product.Assembly();
-        dataObject = new local.tin.tests.jetty.embedded.crud.models.data.product.Assembly();
-        dataObjectId = new local.tin.tests.jetty.embedded.crud.models.data.embeddables.AssemblyId();
+        dataObject = new local.tin.tests.jetty.embedded.crud.dao.model.product.Assembly();
+        dataObjectId = new local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId();
         domainbjectId = new local.tin.tests.jetty.embedded.crud.models.domain.compositeIds.AssemblyId();
         mockedProductDAO = mock(ProductDAO.class);
-        when(mockedDAOFactory.getDAO(local.tin.tests.jetty.embedded.crud.models.data.product.Product.class)).thenReturn(mockedProductDAO);
+        when(mockedDAOFactory.getDAO(local.tin.tests.jetty.embedded.crud.dao.model.product.Product.class)).thenReturn(mockedProductDAO);
         mockedDomainProduct = mock(local.tin.tests.jetty.embedded.crud.models.domain.product.Product.class);
-        mockedDataProduct = mock(local.tin.tests.jetty.embedded.crud.models.data.product.Product.class);
+        mockedDataProduct = mock(local.tin.tests.jetty.embedded.crud.dao.model.product.Product.class);
         when(mockedProductDAO.getDataObject(eq(mockedDomainProduct), anyInt())).thenReturn(mockedDataProduct);
         when(mockedProductDAO.getDomainObject(eq(mockedDataProduct), anyInt())).thenReturn(mockedDomainProduct);
         setComponentMocks();

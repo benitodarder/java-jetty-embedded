@@ -3,7 +3,7 @@ package local.tin.tests.jetty.embedded.crud.dao.impl;
 import javax.persistence.EntityManagerFactory;
 import local.tin.tests.jetty.embedded.core.dao.impl.EnableableDAO;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
-import local.tin.tests.jetty.embedded.crud.models.data.product.Unit;
+import local.tin.tests.jetty.embedded.crud.dao.model.product.Unit;
 
 /**
  *
@@ -40,7 +40,7 @@ public class UnitDAO extends EnableableDAO<local.tin.tests.jetty.embedded.crud.m
     @Override
     protected local.tin.tests.jetty.embedded.crud.models.domain.product.Unit updateDomainObjectDeeperFields(local.tin.tests.jetty.embedded.crud.models.domain.product.Unit domainObject, Unit dataObject, int depth) throws DAOException {
         ComponentDAO componentDAO = getComponentDAO();
-        for (local.tin.tests.jetty.embedded.crud.models.data.product.Component current : dataObject.getComponents()) {
+        for (local.tin.tests.jetty.embedded.crud.dao.model.product.Component current : dataObject.getComponents()) {
             domainObject.getComponents().add(componentDAO.getDomainObject(current, depth));
         }
         return domainObject;
@@ -63,6 +63,6 @@ public class UnitDAO extends EnableableDAO<local.tin.tests.jetty.embedded.crud.m
     }
 
     private ComponentDAO getComponentDAO() throws DAOException {
-        return (ComponentDAO) ProductDAOFactory.getInstance().getDAO(local.tin.tests.jetty.embedded.crud.models.data.product.Component.class);
+        return (ComponentDAO) ProductDAOFactory.getInstance().getDAO(local.tin.tests.jetty.embedded.crud.dao.model.product.Component.class);
     }
 }

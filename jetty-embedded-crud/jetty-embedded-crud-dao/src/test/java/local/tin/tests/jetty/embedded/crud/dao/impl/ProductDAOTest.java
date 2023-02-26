@@ -14,7 +14,7 @@ public class ProductDAOTest extends BaseDAOTest {
 
     private ProductDAO dao;
     private local.tin.tests.jetty.embedded.crud.models.domain.product.Product domainObject;
-    private local.tin.tests.jetty.embedded.crud.models.data.product.Product dataObject;
+    private local.tin.tests.jetty.embedded.crud.dao.model.product.Product dataObject;
 
     
     @Before
@@ -23,7 +23,7 @@ public class ProductDAOTest extends BaseDAOTest {
         setAssemblyMocks();        
         dao = new ProductDAO(mockedEntityManagerFactory);
         domainObject = new local.tin.tests.jetty.embedded.crud.models.domain.product.Product();
-        dataObject = new local.tin.tests.jetty.embedded.crud.models.data.product.Product();
+        dataObject = new local.tin.tests.jetty.embedded.crud.dao.model.product.Product();
     }
             
     @Test

@@ -1,4 +1,4 @@
-package local.tin.tests.jetty.embedded.crud.models.data.embeddables;
+package local.tin.tests.jetty.embedded.crud.dao.model.embeddables;
 
 import java.util.Objects;
 import javax.persistence.Column;

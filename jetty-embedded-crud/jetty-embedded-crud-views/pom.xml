@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>local.tin.tests</groupId>
-        <artifactId>jetty-embedded-crud-model</artifactId>
+        <artifactId>jetty-embedded-crud</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>jetty-embedded-crud-model-views</artifactId>
+    <artifactId>jetty-embedded-crud-views</artifactId>
     <packaging>jar</packaging>
     <dependencies>   
         <dependency>
@@ -39,5 +39,5 @@
             <artifactId>jaxb-impl</artifactId>
         </dependency>
     </dependencies>
-    <name>jetty-embedded-crud-model-views</name>
+    <name>jetty-embedded-crud-views</name>
 </project>

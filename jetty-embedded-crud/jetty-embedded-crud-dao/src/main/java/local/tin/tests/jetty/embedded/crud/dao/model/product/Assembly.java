@@ -1,4 +1,4 @@
-package local.tin.tests.jetty.embedded.crud.models.data.product;
+package local.tin.tests.jetty.embedded.crud.dao.model.product;
 
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
 import local.tin.tests.jetty.embedded.core.models.data.abstracts.Enableable;
-import local.tin.tests.jetty.embedded.crud.models.data.embeddables.AssemblyId;
+import local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId;
 
 /**
  *

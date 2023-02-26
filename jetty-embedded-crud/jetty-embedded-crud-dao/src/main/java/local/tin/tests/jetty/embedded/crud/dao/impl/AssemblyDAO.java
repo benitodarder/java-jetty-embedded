@@ -5,10 +5,10 @@ import local.tin.tests.jetty.embedded.core.dao.impl.EnableableDAO;
 import local.tin.tests.jetty.embedded.core.models.data.interfaces.IEmbeddable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
-import local.tin.tests.jetty.embedded.crud.models.data.embeddables.AssemblyId;
-import local.tin.tests.jetty.embedded.crud.models.data.product.Assembly;
-import local.tin.tests.jetty.embedded.crud.models.data.product.Component;
-import local.tin.tests.jetty.embedded.crud.models.data.product.Product;
+import local.tin.tests.jetty.embedded.crud.dao.model.embeddables.AssemblyId;
+import local.tin.tests.jetty.embedded.crud.dao.model.product.Assembly;
+import local.tin.tests.jetty.embedded.crud.dao.model.product.Component;
+import local.tin.tests.jetty.embedded.crud.dao.model.product.Product;
 
 /**
  *

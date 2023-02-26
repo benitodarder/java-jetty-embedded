@@ -1,4 +1,4 @@
-package local.tin.tests.jetty.embedded.crud.models.data.product;
+package local.tin.tests.jetty.embedded.crud.dao.model.product;
 
 import java.util.HashSet;
 import java.util.Set;
