@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntityByInteger;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEnableableByInteger;
 
 /**
  *
@@ -16,7 +16,7 @@ import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.NamedEntityBy
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Unit extends NamedEntityByInteger {
+public class Unit extends NamedEnableableByInteger {
 
     private String abbreviation;
     @XmlElementWrapper(name="components")

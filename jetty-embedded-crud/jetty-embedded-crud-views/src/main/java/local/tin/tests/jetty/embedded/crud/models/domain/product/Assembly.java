@@ -4,7 +4,7 @@ import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.Entity;
+import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.Enableable;
 import local.tin.tests.jetty.embedded.crud.models.domain.compositeIds.AssemblyId;
 import local.tin.tests.jetty.embedded.crud.models.domain.deserializers.AssemblyDeserializer;
 import local.tin.tests.jetty.embedded.crud.models.domain.deserializers.AssemblyIdDeserializer;
@@ -17,7 +17,7 @@ import org.codehaus.jackson.map.annotate.JsonDeserialize;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @JsonDeserialize(using = AssemblyDeserializer.class)
-public class Assembly extends Entity<AssemblyId> {
+public class Assembly extends Enableable<AssemblyId> {
 
     @JsonDeserialize(using = AssemblyIdDeserializer.class)
     private AssemblyId id;
