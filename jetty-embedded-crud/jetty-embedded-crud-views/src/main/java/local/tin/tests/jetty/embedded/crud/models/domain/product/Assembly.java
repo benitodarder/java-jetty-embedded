@@ -1,5 +1,6 @@
 package local.tin.tests.jetty.embedded.crud.models.domain.product;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,7 +9,6 @@ import local.tin.tests.jetty.embedded.crud.models.domain.abstracts.Enableable;
 import local.tin.tests.jetty.embedded.crud.models.domain.compositeIds.AssemblyId;
 import local.tin.tests.jetty.embedded.crud.models.domain.deserializers.AssemblyDeserializer;
 import local.tin.tests.jetty.embedded.crud.models.domain.deserializers.AssemblyIdDeserializer;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 /**
  *
