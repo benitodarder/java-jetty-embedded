@@ -1,6 +1,7 @@
 package local.tin.tests.jetty.embedded.core.base.web;
 
 import java.util.Map;
+import java.util.logging.Level;
 import local.tin.tests.jetty.embedded.core.base.IConfiguration;
 import local.tin.tests.jetty.embedded.core.base.exceptions.JettyEmbeddedCommonException;
 import local.tin.tests.jetty.embedded.core.base.web.interfaces.IAbstractJettyServer;
@@ -43,8 +44,8 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
         try {
             startAndJoinServer();
         } catch (JettyEmbeddedCommonException ex) {
-            getLogger().error(ex.getMessage());
-            getLogger().debug(ex);
+            getLogger().log(Level.SEVERE,ex.getMessage());
+            getLogger().log(Level.FINER, ex.getMessage(), ex);
         }
     }
 
@@ -52,7 +53,7 @@ public abstract class AbstractJettyServer implements IAbstractJettyServer {
     public void startAndJoinServer() throws JettyEmbeddedCommonException {
         try {
             getJettyServer().start();
-            getJettyServer().join();
+            getJettyServer().join(); 
         } catch (Exception ex) {
             throw new JettyEmbeddedCommonException(ex);
         }

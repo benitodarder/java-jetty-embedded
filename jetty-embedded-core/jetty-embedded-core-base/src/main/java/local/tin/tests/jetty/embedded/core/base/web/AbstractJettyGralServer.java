@@ -1,13 +1,18 @@
 package local.tin.tests.jetty.embedded.core.base.web;
 
+import java.util.EnumSet;
+import javax.servlet.DispatcherType;
 import local.tin.tests.jetty.embedded.core.base.IConfiguration;
+import local.tin.tests.jetty.embedded.core.base.ILoggingConfiguration;
 import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
 import local.tin.tests.jetty.embedded.core.base.IWebPageConfiguration;
 import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.CustomRequestLog;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.Slf4jRequestLogWriter;
 import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
@@ -51,6 +56,15 @@ public abstract class AbstractJettyGralServer extends AbstractJettyServer {
 
             ContextHandlerCollection handlers = new ContextHandlerCollection(resCtx, getServletContextHandler());
             getJettyServer().setHandler(handlers);
+        }
+
+        if (configuration instanceof ILoggingConfiguration) {
+            ILoggingConfiguration iLoggingConfiguration = (ILoggingConfiguration) configuration;
+            getServletContextHandler().addFilter(iLoggingConfiguration.getLoggingFilterClass(), iLoggingConfiguration.getLogginfFilterPath(), EnumSet.of(DispatcherType.REQUEST));
+            Slf4jRequestLogWriter slfjRequestLogWriter = new Slf4jRequestLogWriter();
+            slfjRequestLogWriter.setLoggerName(iLoggingConfiguration.getHttpAccessLogger());
+            CustomRequestLog customRequestLog = new CustomRequestLog(slfjRequestLogWriter, iLoggingConfiguration.getHttpAccessPattern());
+            getJettyServer().setRequestLog(customRequestLog);
         }
 
     }

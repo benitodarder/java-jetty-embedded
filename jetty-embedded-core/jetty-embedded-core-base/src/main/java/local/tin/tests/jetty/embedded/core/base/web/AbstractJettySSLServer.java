@@ -1,5 +1,6 @@
 package local.tin.tests.jetty.embedded.core.base.web;
 
+import java.util.logging.Level;
 import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.HttpConfiguration;
@@ -23,7 +24,7 @@ public abstract class AbstractJettySSLServer extends AbstractJettyServer {
         https.addCustomizer(new SecureRequestCustomizer());
 
         SslContextFactory sslContextFactory = new SslContextFactory();
-        getLogger().debug("AbstractJettySSLServer JKS path:" + configuration.getJKSPath());
+        getLogger().log(Level.FINE, "AbstractJettySSLServer JKS path:{0}", configuration.getJKSPath());
         sslContextFactory.setKeyStorePath(configuration.getJKSPath());
         sslContextFactory.setKeyStorePassword(configuration.getKeystorePassword());
         sslContextFactory.setKeyManagerPassword(configuration.getJKSPassword());

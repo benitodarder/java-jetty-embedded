@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +15,6 @@ import javax.persistence.TransactionRequiredException;
 import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IIdentifiable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
-import org.apache.log4j.Logger;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 import org.junit.Before;
@@ -28,9 +29,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.never;
 
 /**
@@ -58,7 +57,7 @@ public class AbstractDAOTest extends BaseDAOTest {
         BaseDAOTest.setUpClass();
         mockedLogger = mock(Logger.class);
         PowerMockito.mockStatic(Logger.class);
-        when(Logger.getLogger(IdentifiableDAO.class)).thenReturn(mockedLogger);
+        when(Logger.getLogger(IdentifiableDAO.class.getCanonicalName())).thenReturn(mockedLogger);
         mockedAbstractDataObject = mock(IIdentifiable.class);
         mockedAbstractDomainObject = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.IIdentifiable.class);
         mockedICompositeId = mock(local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId.class);
@@ -124,7 +123,7 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.persist(mockedEntityManager, mockedAbstractDataObject);
 
-        verify(mockedLogger).error(dao.getExceptionMessage(mockedRuntimeException));
+        verify(mockedLogger).log(Level.SEVERE, dao.getExceptionMessage(mockedRuntimeException));
     }
 
     @Test
@@ -176,7 +175,7 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.merge(mockedEntityManager, mockedAbstractDataObject);
 
-        verify(mockedLogger).error(dao.getExceptionMessage(mockedRuntimeException));
+        verify(mockedLogger).log(Level.SEVERE, dao.getExceptionMessage(mockedRuntimeException));
     }
 
     @Test
@@ -238,7 +237,7 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.refresh(mockedEntityManager, mockedAbstractDataObject);
 
-        verify(mockedLogger).error(dao.getExceptionMessage(mockedRuntimeException));
+        verify(mockedLogger).log(Level.SEVERE, dao.getExceptionMessage(mockedRuntimeException));
     }
 
     @Test
@@ -291,7 +290,7 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.remove(mockedEntityManager, mockedAbstractDataObject);
 
-        verify(mockedLogger).error(dao.getExceptionMessage(mockedRuntimeException));
+        verify(mockedLogger).log(Level.SEVERE, dao.getExceptionMessage(mockedRuntimeException));
     }
 
     @Test
@@ -318,7 +317,7 @@ public class AbstractDAOTest extends BaseDAOTest {
 
         dao.findById(mockedEntityManager, ID);
 
-        verify(mockedLogger).error(dao.getExceptionMessage(mockedRuntimeException));
+        verify(mockedLogger).log(Level.SEVERE, dao.getExceptionMessage(mockedRuntimeException));
     }
 
     @Test

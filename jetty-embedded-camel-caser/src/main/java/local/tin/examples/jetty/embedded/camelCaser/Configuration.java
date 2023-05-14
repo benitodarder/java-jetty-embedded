@@ -7,7 +7,7 @@ import local.tin.tests.jetty.embedded.core.base.controllers.Ping;
 import local.tin.tests.jetty.embedded.core.base.web.ShutdownHook;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
-import local.tin.tests.java.embedded.core.slf4j.ILoggingConfiguration;
+import local.tin.tests.jetty.embedded.core.base.ILoggingConfiguration;
 /**
  *
  * @author benitodarder

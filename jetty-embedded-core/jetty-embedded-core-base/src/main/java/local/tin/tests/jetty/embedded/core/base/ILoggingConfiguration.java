@@ -1,4 +1,4 @@
-package local.tin.tests.java.embedded.core.slf4j;
+package local.tin.tests.jetty.embedded.core.base;
 
 import local.tin.tests.jetty.embedded.core.base.IConfiguration;
 

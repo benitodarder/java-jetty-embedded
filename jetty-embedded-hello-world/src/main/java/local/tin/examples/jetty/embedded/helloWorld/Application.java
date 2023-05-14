@@ -4,12 +4,12 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Map;
+import java.util.logging.Logger;
 import local.tin.examples.jetty.embedded.helloWorld.web.HelloWorldServer;
-import org.apache.log4j.Logger;
 
 public class Application {
 
-    public static final Logger LOGGER = Logger.getLogger(Application.class);
+    public static final Logger LOGGER = Logger.getLogger(Application.class.getCanonicalName());
 
     public static void main(String[] args) throws Exception {
 

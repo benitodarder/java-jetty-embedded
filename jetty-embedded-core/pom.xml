@@ -13,6 +13,5 @@
         <module>jetty-embedded-core-base</module>        
         <module>jetty-embedded-core-dao</module>
         <module>jetty-embedded-core-utils</module>
-        <module>jetty-embedded-core-slf4j</module>
     </modules>
 </project>

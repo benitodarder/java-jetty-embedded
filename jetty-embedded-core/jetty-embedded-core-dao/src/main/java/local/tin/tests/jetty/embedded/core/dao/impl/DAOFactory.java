@@ -2,9 +2,10 @@ package local.tin.tests.jetty.embedded.core.dao.impl;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManagerFactory;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
-import org.apache.log4j.Logger;
 
 /**
  * Must provide an entity manager factory
@@ -30,7 +31,7 @@ public abstract class DAOFactory {
             Constructor<?> constructor = daoClass.getDeclaredConstructor(EntityManagerFactory.class);
             return (IdentifiableDAO) constructor.newInstance(getEntityManagerFactory());
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | ClassNotFoundException ex) {
-            getLogger().error(ex);
+            getLogger().log(Level.SEVERE, ex.getMessage());
             throw new DAOException(ex);
         }  
     }  

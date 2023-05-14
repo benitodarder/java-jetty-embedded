@@ -1,7 +1,7 @@
 package local.tin.examples.jetty.embedded.logging.web;
 
+import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.base.web.ShutdownHook;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class JettyyLoggingShutdownHook extends ShutdownHook {
     
-    private static final Logger LOGGER = Logger.getLogger(JettyyLoggingShutdownHook.class);
+    private static final Logger LOGGER = Logger.getLogger(JettyyLoggingShutdownHook.class.getCanonicalName());
 
     @Override
     protected Logger getLogger() {

@@ -8,11 +8,7 @@
     </parent>
     <artifactId>jetty-embedded-core-dao</artifactId>
     <packaging>jar</packaging>
-    <dependencies>                                       
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>                 
-        </dependency>    
+    <dependencies>                                         
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>

@@ -2,9 +2,9 @@ package local.tin.tests.jetty.embedded.core.dao;
 
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.ServiceException;
-import org.apache.log4j.Logger;
 
 /**
  * Extensions must initialize configuration with a call to resetConfiguration

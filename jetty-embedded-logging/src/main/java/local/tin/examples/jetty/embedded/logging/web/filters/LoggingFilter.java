@@ -7,6 +7,8 @@ package local.tin.examples.jetty.embedded.logging.web.filters;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,17 +18,14 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class LoggingFilter implements javax.servlet.Filter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("messageLogger");
+    private static final Logger LOGGER = Logger.getLogger("messageLogger");
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         if (!(request instanceof HttpServletRequest) || !(response instanceof HttpServletResponse)) {
-            LOGGER.warn("LoggingFilter just supports HTTP requests");
+            LOGGER.log(Level.WARNING, "LoggingFilter just supports HTTP requests");
         } else {
 
             HttpServletRequest httpRequest = (HttpServletRequest) request;
@@ -40,13 +39,13 @@ public class LoggingFilter implements javax.servlet.Filter {
 
                 filterChain.doFilter(requestWrapper, responseWrapper);
 
-                LOGGER.info("{} {} - {}{} - {}ms\nRequest body:\n{}\nResponse body:\n{}\n==============================================", requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, responseWrapper.getContent());
+                LOGGER.log(Level.INFO, "{0} {1} - {2}{3} - {4}ms\nRequest body:\n{5}\nResponse body:\n{6}\n==============================================",  new Object[]{requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, responseWrapper.getContent()});
 
             } catch (Exception e) {
                 StringWriter sw = new StringWriter();
                 PrintWriter pw = new PrintWriter(sw);
                 e.printStackTrace(pw);
-                LOGGER.error("{} {} - {}{} - {}ms\nRequest body:\n{}\nException message:\n{}\n==============================================", requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, sw.toString());
+                LOGGER.log(Level.SEVERE, "{0} {1} - {2}{3} - {4}ms\nRequest body:\n{5}\nException message:\n{6}\n==============================================", new Object[]{requestWrapper.getMethod(), responseWrapper.getStatus(), requestWrapper.getRequestURL().toString(), requestWrapper.getQueryString() != null ? ("?" + requestWrapper.getQueryString()) : "", (System.currentTimeMillis() - t0), requestBody, sw.toString()});
             }
             httpResponse.getOutputStream().write(responseWrapper.getContentAsBytes());
 

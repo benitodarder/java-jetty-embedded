@@ -1,6 +1,6 @@
 package local.tin.examples.jetty.embedded.helloWorld.web;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.base.IConfiguration;
 import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyNoSSLServer;
 
@@ -10,7 +10,7 @@ import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyNoSSLServer;
  */
 public class HelloWorldServer extends AbstractJettyNoSSLServer {
     
-    private static final Logger LOGGER = Logger.getLogger(HelloWorldServer.class);
+    private static final Logger LOGGER = Logger.getLogger(HelloWorldServer.class.getCanonicalName());
     
     public HelloWorldServer(IConfiguration parameters) {
         super(parameters);

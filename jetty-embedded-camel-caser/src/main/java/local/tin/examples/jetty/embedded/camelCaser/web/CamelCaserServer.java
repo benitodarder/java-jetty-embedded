@@ -1,16 +1,16 @@
 package local.tin.examples.jetty.embedded.camelCaser.web;
 
-import local.tin.tests.java.embedded.core.slf4j.web.AbstractJettyGralLoggingServer;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.base.ISSLConfiguration;
+import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyGralServer;
 
 /**
  *
  * @author benitodarder
  */
-public class CamelCaserServer extends AbstractJettyGralLoggingServer {
+public class CamelCaserServer extends AbstractJettyGralServer {
 
-    private static final Logger LOGGER = Logger.getLogger(CamelCaserServer.class);
+    private static final Logger LOGGER = Logger.getLogger(CamelCaserServer.class.getCanonicalName());
 
 
     public CamelCaserServer(ISSLConfiguration configuration) {

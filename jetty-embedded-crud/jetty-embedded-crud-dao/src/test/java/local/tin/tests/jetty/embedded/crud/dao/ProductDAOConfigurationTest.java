@@ -1,11 +1,10 @@
 package local.tin.tests.jetty.embedded.crud.dao;
 
 import java.util.Map;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
-import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import org.powermock.reflect.Whitebox;

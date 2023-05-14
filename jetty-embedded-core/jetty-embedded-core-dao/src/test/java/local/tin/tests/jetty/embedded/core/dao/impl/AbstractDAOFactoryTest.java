@@ -1,9 +1,9 @@
 package local.tin.tests.jetty.embedded.core.dao.impl;
 
+import java.util.logging.Logger;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;
-import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

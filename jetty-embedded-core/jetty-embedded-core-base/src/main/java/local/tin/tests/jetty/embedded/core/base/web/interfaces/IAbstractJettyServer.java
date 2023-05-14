@@ -1,14 +1,14 @@
 package local.tin.tests.jetty.embedded.core.base.web.interfaces;
 
 import java.util.Map;
+import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.base.exceptions.JettyEmbeddedCommonException;
-import org.apache.log4j.Logger;
 
 /**
  *
  * @author benitodarder
  */
-public interface IAbstractJettyServer extends Runnable {
+public interface IAbstractJettyServer<T> extends Runnable {
 
     /**
      * Starts and joins servers. Requests are accepted.
@@ -38,5 +38,6 @@ public interface IAbstractJettyServer extends Runnable {
      */
     public Map<String, String> getInitParameters() throws JettyEmbeddedCommonException;
 
+    
     public Logger getLogger();
 }
