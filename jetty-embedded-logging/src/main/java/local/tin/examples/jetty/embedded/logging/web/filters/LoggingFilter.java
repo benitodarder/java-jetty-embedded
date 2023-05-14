@@ -7,7 +7,6 @@ package local.tin.examples.jetty.embedded.logging.web.filters;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.stream.Collectors;
 
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -19,12 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
 
 public class LoggingFilter implements javax.servlet.Filter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger("messageLogger");
-    private static Marker marker;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {

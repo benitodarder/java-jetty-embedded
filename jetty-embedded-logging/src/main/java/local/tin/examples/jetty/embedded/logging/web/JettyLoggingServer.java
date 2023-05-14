@@ -1,7 +1,7 @@
 package local.tin.examples.jetty.embedded.logging.web;
 
 import local.tin.examples.jetty.embedded.logging.Configuration;
-import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyLoggingServer;
+import local.tin.tests.java.embedded.core.slf4j.web.AbstractJettyLoggingServer;
 import org.apache.log4j.Logger;
 
 /**
