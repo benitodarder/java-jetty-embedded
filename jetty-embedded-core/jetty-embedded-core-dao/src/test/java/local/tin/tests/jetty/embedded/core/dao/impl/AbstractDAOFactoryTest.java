@@ -1,6 +1,6 @@
 package local.tin.tests.jetty.embedded.core.dao.impl;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;

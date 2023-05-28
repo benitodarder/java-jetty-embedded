@@ -3,8 +3,8 @@ package local.tin.examples.jetty.embedded.camelCaser.web.filters;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
@@ -16,7 +16,7 @@ import javax.servlet.ServletInputStream;
  */
 public class SimpleServletInputStream extends ServletInputStream {
 
-    private static final Logger LOGGER = Logger.getLogger(SimpleServletInputStream.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(SimpleServletInputStream.class.getCanonicalName());
     private final InputStream is;
 
     public SimpleServletInputStream(byte[] content) {
@@ -28,7 +28,7 @@ public class SimpleServletInputStream extends ServletInputStream {
         try {
             return is.available() == 0;
         } catch (IOException ex) {
-            LOGGER.log(Level.WARNING, "Unexpected IOException on isFinished, returning true.", ex);
+            LOGGER.warn("Unexpected IOException on isFinished, returning true.", ex);
             return true;
         }
     }

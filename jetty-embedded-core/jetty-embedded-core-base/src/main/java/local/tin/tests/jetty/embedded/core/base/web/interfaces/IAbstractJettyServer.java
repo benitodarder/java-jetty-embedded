@@ -1,8 +1,8 @@
 package local.tin.tests.jetty.embedded.core.base.web.interfaces;
 
 import java.util.Map;
-import java.util.logging.Logger;
 import local.tin.tests.jetty.embedded.core.base.exceptions.JettyEmbeddedCommonException;
+import org.slf4j.Logger;
 
 /**
  *

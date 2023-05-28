@@ -1,7 +1,5 @@
 package local.tin.tests.jetty.embedded.core.base;
 
-import local.tin.tests.jetty.embedded.core.base.IConfiguration;
-
 /**
  *
  * @author benitodarder

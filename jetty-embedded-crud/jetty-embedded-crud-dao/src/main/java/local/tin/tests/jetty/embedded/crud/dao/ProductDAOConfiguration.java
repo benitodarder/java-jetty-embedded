@@ -2,8 +2,9 @@ package local.tin.tests.jetty.embedded.crud.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -11,7 +12,7 @@ import local.tin.tests.jetty.embedded.core.dao.DAOConfiguration;
  */
 public class ProductDAOConfiguration extends DAOConfiguration {
 
-    private static final Logger LOGGER = Logger.getLogger(ProductDAOConfiguration.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductDAOConfiguration.class.getCanonicalName());
     private static Map<String, String> configurationMap;
 
     private ProductDAOConfiguration() {

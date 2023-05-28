@@ -1,6 +1,6 @@
 package local.tin.tests.jetty.embedded.core.base.web;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 
 /**

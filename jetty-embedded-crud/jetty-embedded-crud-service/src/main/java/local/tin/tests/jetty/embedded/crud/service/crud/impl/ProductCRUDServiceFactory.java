@@ -1,9 +1,10 @@
 package local.tin.tests.jetty.embedded.crud.service.crud.impl;
 
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import local.tin.tests.jetty.embedded.core.dao.impl.DAOFactory;
 import local.tin.tests.jetty.embedded.crud.dao.impl.ProductDAOFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -11,7 +12,7 @@ import local.tin.tests.jetty.embedded.crud.dao.impl.ProductDAOFactory;
  */
 public class ProductCRUDServiceFactory extends AbstractCRUDServiceFactory {
 
-    private static final Logger LOGGER = Logger.getLogger(ProductCRUDServiceFactory.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductCRUDServiceFactory.class.getCanonicalName());
 
     private ProductCRUDServiceFactory(DAOFactory baseDAOFactory) {
         super(baseDAOFactory);

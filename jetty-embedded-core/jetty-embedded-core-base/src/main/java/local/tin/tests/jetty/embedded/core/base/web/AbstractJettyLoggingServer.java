@@ -3,7 +3,6 @@ package local.tin.tests.jetty.embedded.core.base.web;
 import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 import local.tin.tests.jetty.embedded.core.base.ILoggingConfiguration;
-import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyServer;
 import org.eclipse.jetty.server.CustomRequestLog;
 import org.eclipse.jetty.server.Slf4jRequestLogWriter;
 

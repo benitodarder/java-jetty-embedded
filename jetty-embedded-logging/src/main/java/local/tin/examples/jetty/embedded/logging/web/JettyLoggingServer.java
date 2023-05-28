@@ -1,8 +1,9 @@
 package local.tin.examples.jetty.embedded.logging.web;
 
-import java.util.logging.Logger;
 import local.tin.examples.jetty.embedded.logging.Configuration;
 import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyLoggingServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -10,7 +11,7 @@ import local.tin.tests.jetty.embedded.core.base.web.AbstractJettyLoggingServer;
  */
 public class JettyLoggingServer extends AbstractJettyLoggingServer {
 
-    private static final Logger LOGGER = Logger.getLogger(JettyLoggingServer.class.getCanonicalName());
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(JettyLoggingServer.class.getCanonicalName());
 
     public JettyLoggingServer(Configuration parameters) {
         

@@ -1,7 +1,7 @@
 package local.tin.tests.jetty.embedded.crud.dao;
 
 import java.util.Map;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;

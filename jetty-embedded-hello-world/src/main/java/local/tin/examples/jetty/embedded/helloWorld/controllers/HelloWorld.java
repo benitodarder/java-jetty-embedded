@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -14,7 +13,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import org.eclipse.persistence.platform.database.SybasePlatform;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
@@ -25,11 +23,14 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 @Path("/helloWorld")
 public class HelloWorld {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorld.class.getCanonicalName());
+    
     @POST
     @Path("greetings")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
     public String greetings(String msg) {
+        LOGGER.info("About to respond with message: {0}", msg);
         return "Hello " + msg;
     }
 

@@ -34,7 +34,9 @@ public class Configuration implements IConfiguration {
 
     @Override
     public String getControllers() {
-        return Ping.class.getCanonicalName() + ";" + HelloWorld.class.getCanonicalName() + ";" + MultiPartFeature.class.getCanonicalName();
+        return Ping.class.getCanonicalName() + ";"
+                + HelloWorld.class.getCanonicalName() + ";"
+                + MultiPartFeature.class.getCanonicalName();
     }
 
     @Override

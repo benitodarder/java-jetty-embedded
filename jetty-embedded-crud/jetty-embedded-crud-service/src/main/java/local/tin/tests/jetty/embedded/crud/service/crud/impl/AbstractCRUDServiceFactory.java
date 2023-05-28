@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.crud.service.crud.impl;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import local.tin.tests.jetty.embedded.core.dao.impl.IdentifiableDAO;
 import local.tin.tests.jetty.embedded.core.dao.impl.DAOFactory;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;

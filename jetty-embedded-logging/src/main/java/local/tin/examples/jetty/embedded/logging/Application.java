@@ -4,13 +4,13 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import local.tin.examples.jetty.embedded.logging.web.JettyLoggingServer;
 
 public class Application {
 
-    public static final Logger LOGGER = Logger.getLogger(Application.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class.getCanonicalName());
 
     public static void main(String[] args) throws Exception {
 
@@ -32,23 +32,23 @@ public class Application {
 
         LOGGER.info("Init parameters:");
         for (Map.Entry<String, String> entry : initParameters.entrySet()) {
-            LOGGER.log(Level.INFO, "{0} : {1}", new Object[]{entry.getKey(), entry.getValue()});
+            LOGGER.info("{0} : {1}", new Object[]{entry.getKey(), entry.getValue()});
             for (String currentClass : entry.getValue().split(";")) {
                 Class klazz = Class.forName(currentClass);
-                LOGGER.log(Level.INFO, "For class: {0} we have the methods:", currentClass);
+                LOGGER.info("For class: {0} we have the methods:", currentClass);
                 for (Method method : klazz.getDeclaredMethods()) {
-                    LOGGER.log(Level.INFO, "\t{0}:", method.getName());
+                    LOGGER.info("\t{0}:", method.getName());
                     LOGGER.info("\t\tAnnotations:");
                     for (Annotation annotation : method.getDeclaredAnnotations()) {
-                        LOGGER.log(Level.INFO, "\t\t\t{0}", annotation.toString());
+                        LOGGER.info("\t\t\t{0}", annotation.toString());
                     }
                     LOGGER.info("\t\tParameters by getParameterTypes():");
                     for (Class parameterType : method.getParameterTypes()) {
-                        LOGGER.log(Level.INFO, "\t\t\t{0}", parameterType.getCanonicalName());
+                        LOGGER.info("\t\t\t{0}", parameterType.getCanonicalName());
                     }
                     LOGGER.info("\t\tParameters by getParameters():");
                     for (Parameter parameterType : method.getParameters()) {
-                        LOGGER.log(Level.INFO, "\t\t\t{0}, {1}, {2}", new Object[]{parameterType.getName(), parameterType.getType().getName(), parameterType.isNamePresent()});
+                        LOGGER.info("\t\t\t{0}, {1}, {2}", new Object[]{parameterType.getName(), parameterType.getType().getName(), parameterType.isNamePresent()});
                     }
                 }
             }

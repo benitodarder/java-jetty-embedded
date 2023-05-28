@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,6 +16,7 @@ import local.tin.tests.jetty.embedded.core.dao.interfaces.IAbstractDAO;
 import local.tin.tests.jetty.embedded.core.dao.model.interfaces.IEmbeddable;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.interfaces.ICompositeId;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -31,7 +32,7 @@ public abstract class IdentifiableDAO<C0 extends local.tin.tests.jetty.embedded.
     public static final String COULD_NOT_PARSE_STRING_INTO_JAVASQL_DATE = "Could not parse string into java.sql.Date";    
     public static final String UNEXPECTED_RUNTIME_EXCEPTION_MESSAGE_PREFIX = " unexpected RuntimeException: ";
     public static final String NOT_SUPPORTED_YET = "Not supported yet.";    
-    private static final Logger LOGGER = Logger.getLogger(IdentifiableDAO.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(IdentifiableDAO.class.getCanonicalName());
     private final EntityManagerFactory entityManagerFactory;
     
 

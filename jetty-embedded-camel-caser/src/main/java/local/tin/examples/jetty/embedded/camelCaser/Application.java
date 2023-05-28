@@ -1,11 +1,12 @@
 package local.tin.examples.jetty.embedded.camelCaser;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import local.tin.examples.jetty.embedded.camelCaser.web.CamelCaserServer;
+import org.slf4j.LoggerFactory;
 
 public class Application {
 
-    public static final Logger LOGGER = Logger.getLogger(Application.class.getCanonicalName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class.getCanonicalName());
 
     public static void main(String[] args) throws Exception {
 

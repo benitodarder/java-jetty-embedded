@@ -2,7 +2,7 @@ package local.tin.tests.jetty.embedded.core.dao;
 
 import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.DAOException;
 import local.tin.tests.jetty.embedded.core.models.domain.exceptions.ServiceException;
 
