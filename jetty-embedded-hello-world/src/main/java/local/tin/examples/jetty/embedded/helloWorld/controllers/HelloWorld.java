@@ -30,7 +30,7 @@ public class HelloWorld {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
     public String greetings(String msg) {
-        LOGGER.info("About to respond with message: {0}", msg);
+        LOGGER.info("About to respond with message: {}", msg);
         return "Hello " + msg;
     }
 
